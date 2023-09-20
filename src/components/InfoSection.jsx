@@ -1,5 +1,5 @@
 function InfoSection() {
-  return <section></section>;
+  return <section>Hello</section>;
 }
 
 export default InfoSection;

@@ -1,5 +1,5 @@
 function DisplaySection() {
-  return <section></section>;
+  return <section>Hello</section>;
 }
 
 export default DisplaySection;

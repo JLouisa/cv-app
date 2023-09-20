@@ -1,6 +1,6 @@
-import { useState } from "react";
-import { InfoSection } from "./components/InfoSection.jsx";
-import { DisplaySection } from "./components/DisplaySection.jsx";
+// import { useState } from "react";
+import InfoSection from "./components/InfoSection.jsx";
+import DisplaySection from "./components/DisplaySection.jsx";
 import "./styles/App.css";
 
 function App() {
