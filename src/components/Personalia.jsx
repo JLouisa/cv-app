@@ -8,7 +8,7 @@ function Personalia() {
   };
 
   return (
-    <section>
+    <>
       <div className="personaliaTitle">
         <h1>Personalia</h1>
         <button onClick={onHandlerBtn}>v</button>
@@ -39,7 +39,7 @@ function Personalia() {
           </div>
         </form>
       )}
-    </section>
+    </>
   );
 }
 

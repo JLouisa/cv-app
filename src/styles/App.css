@@ -6,6 +6,12 @@
   --borderColor: #777;
 }
 
+hr {
+  border: 1px solid var(--borderColor);
+}
+
+/* --------------------------------------------------- */
+
 header {
   text-align: center;
   border-bottom: 2px solid var(--borderColor);
@@ -23,9 +29,10 @@ main > section {
   padding: 1em;
   min-height: 100vh;
   border: 2px solid black;
+  box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.153);
 }
 
-.personaliaTitle {
+.infoPart > div {
   display: flex;
   justify-content: space-between;
 }
