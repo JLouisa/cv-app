@@ -19,8 +19,23 @@ main {
   padding: 2em;
 }
 
-main section {
+main > section {
   padding: 1em;
   min-height: 100vh;
   border: 2px solid black;
 }
+
+.personaliaTitle {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* .personaliaTitle button {
+  border: none;
+  flex-grow: 0;
+  flex-basis: 0;
+} */
+
+/* form {
+  display: none;
+} */
