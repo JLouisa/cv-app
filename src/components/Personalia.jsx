@@ -1,18 +1,18 @@
 import { useState } from "react";
-// import onHandlerBtn from "./ButtonShow";
+import Button from "./Button.jsx";
 
 function Personalia() {
   const [show, setShow] = useState(false);
 
-  const onHandlerBtn = () => {
+  function onHandlerBtn() {
     setShow(!show);
-  };
+  }
 
   return (
     <>
       <div className="personaliaTitle">
         <h1>Personalia</h1>
-        <button onClick={onHandlerBtn}>v</button>
+        <Button color={"green"} text={"⌄"} onClick={onHandlerBtn} />
       </div>
       {show && (
         <form>

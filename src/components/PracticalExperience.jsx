@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
+import Button from "./Button.jsx";
 
-function WorkExperience() {
+function PracticalExperience() {
   const workList = [
     {
       id: uuidv4(),
@@ -45,7 +46,7 @@ function WorkExperience() {
     <>
       <div className="personaliaTitle">
         <h1>Practical experience</h1>
-        <button onClick={onHandler}>v</button>
+        <Button color={"green"} text={"⌄"} onClick={onHandler} />
       </div>
       {show && (
         <div>
@@ -57,11 +58,11 @@ function WorkExperience() {
               </li>
             ))}
           </ul>
-          <button onClick={onHandlerBtn}>Add Work Experience</button>
+          <Button color={"green"} text={"add Work Experience"} onClick={onHandlerBtn} />
           <div>
             {showBtn && (
               <div>
-                <button onClick={() => addWork(workList2)}>Add</button>
+                <Button color={"green"} text={"Add"} onClick={onHandlerBtn} />
                 {/* <form>
                   <label htmlFor="addWorkExperience">
                     {"Add work Experience"}
@@ -77,4 +78,4 @@ function WorkExperience() {
   );
 }
 
-export default WorkExperience;
+export default PracticalExperience;

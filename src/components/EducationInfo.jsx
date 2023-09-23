@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Button from "./Button.jsx";
 
 function EducationInfo() {
   const [show, setShow] = useState(false);
@@ -10,7 +11,7 @@ function EducationInfo() {
     <>
       <div className="educationTitle">
         <h1>Education</h1>
-        <button onClick={onHandlerBtn}>v</button>
+        <Button color={"green"} text={"⌄"} onClick={onHandlerBtn} />
       </div>
       {show && (
         <form>
