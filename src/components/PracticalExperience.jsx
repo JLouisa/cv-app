@@ -9,29 +9,32 @@ function PracticalExperience() {
       name: "Jonathan",
       last: "Louisa",
     },
-  ];
-
-  const workList2 = [
     {
       id: uuidv4(),
-      name: "Eve",
+      name: "Adam",
+      last: "Thefirst",
+    },
+    {
+      id: uuidv4(),
+      name: "Jonathan",
       last: "Thefirst",
     },
   ];
 
-  function renderlist(list) {
-    return list.map((work) => <li key={work.id}>{work}</li>);
-  }
-
-  const workListRender = workList.map((work) => <li key={work.id}>{work}</li>);
   const [showBtn, setShowBtn] = useState(false);
   const [show, setShow] = useState(false);
-  let [testArr, setTestArr] = useState(workListRender);
-  console.log(testArr);
+  const [work, setWork] = useState(workList);
 
-  const addWork = (work) => {
-    workList.push(work);
-    setTestArr(testArr.push(renderlist(workList)));
+  const addWork = () => {
+    setWork([
+      ...work,
+      {
+        id: uuidv4(),
+        name: "Noa",
+        last: "Ben Adam",
+      },
+    ]);
+    console.log(work);
   };
 
   const onHandlerBtn = () => {
@@ -50,25 +53,24 @@ function PracticalExperience() {
       </div>
       {show && (
         <div>
-          <ul>
-            {testArr.map((work) => (
-              <li key={work.id}>
-                {work.name}
-                {work.last}
-              </li>
-            ))}
-          </ul>
           <Button color={"green"} text={"add Work Experience"} onClick={onHandlerBtn} />
           <div>
             {showBtn && (
               <div>
-                <Button color={"green"} text={"Add"} onClick={onHandlerBtn} />
-                {/* <form>
+                <Button color={"green"} text={"Add"} onClick={addWork} />
+                <p>
+                  <ul>
+                    {work.map((item) => (
+                      <li key={item.id}>{item.name}</li>
+                    ))}
+                  </ul>
+                </p>
+                <form>
                   <label htmlFor="addWorkExperience">
                     {"Add work Experience"}
                     <input type="text" placeholder="Add" id="fName" autoComplete="off" />
                   </label>
-                </form> */}
+                </form>
               </div>
             )}
           </div>
