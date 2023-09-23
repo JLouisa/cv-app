@@ -11,7 +11,7 @@ function EducationInfo() {
     <>
       <div className="educationTitle">
         <h1>Education</h1>
-        <Button color={"green"} text={"⌄"} onClick={onHandlerBtn} />
+        <Button color={"green"} text={show ? "⌃" : "⌄"} onClick={onHandlerBtn} />
       </div>
       {show && (
         <form>

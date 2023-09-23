@@ -23,6 +23,10 @@ hr {
   transition: border-color 0.25s;
 }
 
+.btnAddExp {
+  display: block;
+}
+
 /* --------------------------------------------------- */
 
 header {
@@ -45,17 +49,17 @@ main > section {
   box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.153);
 }
 
-.infoPart > div {
+.practicalExperience,
+.educationTitle,
+.personaliaTitle {
   display: flex;
   justify-content: space-between;
 }
 
-/* .personaliaTitle button {
-  border: none;
-  flex-grow: 0;
-  flex-basis: 0;
-} */
-
-/* form {
-  display: none;
-} */
+.workTitle {
+  border: 1px solid black;
+  font-weight: 700;
+  padding: 1em;
+  background-color: #cfcfcf3a;
+  border-radius: 5px;
+}

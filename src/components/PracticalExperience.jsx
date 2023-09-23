@@ -16,7 +16,7 @@ function PracticalExperience() {
     },
     {
       id: uuidv4(),
-      name: "Jonathan",
+      name: "Eve",
       last: "Thefirst",
     },
   ];
@@ -47,32 +47,34 @@ function PracticalExperience() {
 
   return (
     <>
-      <div className="personaliaTitle">
+      <div className="practicalExperience">
         <h1>Practical experience</h1>
-        <Button color={"green"} text={"⌄"} onClick={onHandler} />
+        <Button color={"green"} text={show ? "⌃" : "⌄"} onClick={onHandler} />
       </div>
       {show && (
         <div>
-          <Button color={"green"} text={"add Work Experience"} onClick={onHandlerBtn} />
+          <div>
+            {work.map((item) => (
+              <p key={item.id} className="workTitle">
+                {item.name}
+              </p>
+            ))}
+          </div>
           <div>
             {showBtn && (
-              <div>
-                <Button color={"green"} text={"Add"} onClick={addWork} />
-                <p>
-                  <ul>
-                    {work.map((item) => (
-                      <li key={item.id}>{item.name}</li>
-                    ))}
-                  </ul>
-                </p>
+              <>
                 <form>
                   <label htmlFor="addWorkExperience">
                     {"Add work Experience"}
-                    <input type="text" placeholder="Add" id="fName" autoComplete="off" />
+                    <input type="text" placeholder="Add" id="addWorkExperience" autoComplete="off" />
                   </label>
                 </form>
-              </div>
+                <Button color={"green"} text={"Add"} onClick={addWork} />
+              </>
             )}
+          </div>
+          <div className="btnAddExp">
+            <Button color={"green"} text={"Add Work Experience"} onClick={onHandlerBtn} />
           </div>
         </div>
       )}

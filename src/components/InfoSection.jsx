@@ -5,7 +5,7 @@ import PracticalExperience from "./PracticalExperience.jsx";
 
 function InfoSection() {
   return (
-    <section className="infoPart">
+    <section className="infoSection">
       <Personalia />
       <hr></hr>
       <EducationInfo />

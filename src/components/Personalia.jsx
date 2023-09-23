@@ -12,7 +12,7 @@ function Personalia() {
     <>
       <div className="personaliaTitle">
         <h1>Personalia</h1>
-        <Button color={"green"} text={"⌄"} onClick={onHandlerBtn} />
+        <Button color={"green"} text={show ? "⌃" : "⌄"} onClick={onHandlerBtn} />
       </div>
       {show && (
         <form>

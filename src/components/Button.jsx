@@ -1,6 +1,7 @@
 // import PropTypes from "prop-types";
 
 function Button({
+  classNameBtn = "btn",
   color = "green",
   text = "LeButton",
   onClick = () => {
@@ -8,7 +9,7 @@ function Button({
   },
 }) {
   return (
-    <button className="btn" style={{ backgroundColor: color }} onClick={onClick}>
+    <button className={classNameBtn} style={{ backgroundColor: color }} onClick={onClick}>
       {text}
     </button>
   );
