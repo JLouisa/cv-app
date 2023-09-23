@@ -2,17 +2,35 @@ import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 function WorkExperience() {
-  const workList = ["Hello", "World"];
-  const workListRender = workList.map((work) => <li key={uuidv4()}>{work}</li>);
+  const workList = [
+    {
+      id: uuidv4(),
+      name: "Jonathan",
+      last: "Louisa",
+    },
+  ];
+
+  const workList2 = [
+    {
+      id: uuidv4(),
+      name: "Eve",
+      last: "Thefirst",
+    },
+  ];
+
+  function renderlist(list) {
+    return list.map((work) => <li key={work.id}>{work}</li>);
+  }
+
+  const workListRender = workList.map((work) => <li key={work.id}>{work}</li>);
   const [showBtn, setShowBtn] = useState(false);
   const [show, setShow] = useState(false);
   let [testArr, setTestArr] = useState(workListRender);
+  console.log(testArr);
 
   const addWork = (work) => {
-    let change = [...workListRender];
-    let add = <li key={uuidv4()}>{work}</li>;
-    change.push(add);
-    setTestArr(change);
+    workList.push(work);
+    setTestArr(testArr.push(renderlist(workList)));
   };
 
   const onHandlerBtn = () => {
@@ -31,12 +49,19 @@ function WorkExperience() {
       </div>
       {show && (
         <div>
-          <ul>{testArr}</ul>
+          <ul>
+            {testArr.map((work) => (
+              <li key={work.id}>
+                {work.name}
+                {work.last}
+              </li>
+            ))}
+          </ul>
           <button onClick={onHandlerBtn}>Add Work Experience</button>
           <div>
             {showBtn && (
               <div>
-                <button onClick={addWork}>Add</button>
+                <button onClick={() => addWork(workList2)}>Add</button>
                 {/* <form>
                   <label htmlFor="addWorkExperience">
                     {"Add work Experience"}
