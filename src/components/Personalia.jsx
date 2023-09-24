@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Button from "./Button.jsx";
 
-function Personalia() {
+function Personalia({ onAddPersonInfo }) {
   const [show, setShow] = useState(false);
 
   const [firstName, setFirstName] = useState("");
@@ -18,6 +18,19 @@ function Personalia() {
     console.log(e.target.value);
   }
 
+  function onSubmit(e) {
+    e.preventDefault();
+    if (!firstName) {
+      alert("Please fill in your name");
+      return;
+    }
+    onAddPersonInfo({ firstName, lastName, email, phoneNum });
+    // setFirstName("");
+    // setLastName("");
+    // setEmail("");
+    // setphoneNum("");
+  }
+
   return (
     <>
       <div className="personaliaTitle">
@@ -25,7 +38,7 @@ function Personalia() {
         <Button color={"green"} text={show ? "⌃" : "⌄"} onClick={onHandlerBtn} />
       </div>
       {show && (
-        <form>
+        <form onSubmit={onSubmit}>
           <label htmlFor="fName">
             {"First Name "}
             <input

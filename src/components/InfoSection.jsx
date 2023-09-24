@@ -3,10 +3,10 @@ import Personalia from "./Personalia.jsx";
 import EducationInfo from "./EducationInfo.jsx";
 import PracticalExperience from "./PracticalExperience.jsx";
 
-function InfoSection() {
+function InfoSection({ onAddPersonInfo }) {
   return (
     <section className="infoSection">
-      <Personalia />
+      <Personalia onAddPersonInfo={onAddPersonInfo} />
       <hr></hr>
       <EducationInfo />
       <hr></hr>

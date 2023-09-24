@@ -8,6 +8,7 @@ function App() {
 
   const addPersonInfo = (info) => {
     console.log(info);
+    setPersonInfo(info);
   };
 
   return (
@@ -16,8 +17,8 @@ function App() {
         <h1>CV Builder</h1>
       </header>
       <main>
-        <InfoSection addPersonInfo={addPersonInfo} />
-        <DisplaySection />
+        <InfoSection onAddPersonInfo={addPersonInfo} />
+        <DisplaySection thePersnInfo={personInfo} />
       </main>
     </>
   );
