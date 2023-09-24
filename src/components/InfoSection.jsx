@@ -1,4 +1,5 @@
 // import { useState } from "react";
+import PropTypes from "prop-types";
 import Personalia from "./Personalia.jsx";
 import EducationInfo from "./EducationInfo.jsx";
 import PracticalExperience from "./PracticalExperience.jsx";
@@ -15,5 +16,10 @@ function InfoSection({ onAddPersonInfo, onAddEducationInfo }) {
     </section>
   );
 }
+
+InfoSection.propTypes = {
+  onAddPersonInfo: PropTypes.func,
+  onAddEducationInfo: PropTypes.func,
+};
 
 export default InfoSection;

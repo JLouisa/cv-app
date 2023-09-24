@@ -25,10 +25,6 @@ function Personalia({ onAddPersonInfo }) {
       return;
     }
     onAddPersonInfo({ firstName, lastName, email, phoneNum });
-    // setFirstName("");
-    // setLastName("");
-    // setEmail("");
-    // setphoneNum("");
   }
 
   return (

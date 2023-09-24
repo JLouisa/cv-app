@@ -1,4 +1,5 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
 import { v4 as uuidv4 } from "uuid";
 import Button from "./Button.jsx";
 
@@ -93,5 +94,9 @@ function EducationInfo({ onAddEducationInfo }) {
     </>
   );
 }
+
+EducationInfo.propTypes = {
+  onAddEducationInfo: PropTypes.func,
+};
 
 export default EducationInfo;

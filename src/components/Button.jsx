@@ -1,4 +1,4 @@
-// import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 
 function Button({
   classNameBtn = "btn",
@@ -15,10 +15,11 @@ function Button({
   );
 }
 
-// Button.propType = {
-//   color: PropTypes.string,
-//   text: PropTypes.string,
-//   onClick: PropTypes.func,
-// };
+Button.propTypes = {
+  classNameBtn: PropTypes.string,
+  color: PropTypes.string,
+  text: PropTypes.string,
+  onClick: PropTypes.func,
+};
 
 export default Button;

@@ -25,17 +25,17 @@ function PracticalExperience() {
   const [show, setShow] = useState(false);
   const [work, setWork] = useState(workList);
 
-  const addWork = () => {
-    setWork([
-      ...work,
-      {
-        id: uuidv4(),
-        name: "Noa",
-        last: "Ben Adam",
-      },
-    ]);
-    console.log(work);
-  };
+  // const addWork = () => {
+  //   setWork([
+  //     ...work,
+  //     {
+  //       id: uuidv4(),
+  //       name: "Noa",
+  //       last: "Ben Adam",
+  //     },
+  //   ]);
+  //   console.log(work);
+  // };
 
   const onHandlerBtn = () => {
     setShowBtn(!showBtn);
