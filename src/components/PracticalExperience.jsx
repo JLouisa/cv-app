@@ -7,18 +7,30 @@ function PracticalExperience({ onAddPracExpInfo }) {
   const workList = [
     {
       id: uuidv4(),
-      name: "Jonathan",
-      last: "Louisa",
+      yourfunction: "Eating",
+      yourEmployer: "The Almighty",
+      yourLocation: "Test",
+      yourStartDate: "2022-01-01",
+      yourEndDate: "2023-01-01",
+      yourDescription: "Lol",
     },
     {
       id: uuidv4(),
-      name: "Adam",
-      last: "Thefirst",
+      yourfunction: "Working",
+      yourEmployer: "The Almighty",
+      yourLocation: "Outside",
+      yourStartDate: "1-01-01",
+      yourEndDate: "900-01-01",
+      yourDescription: "Lol",
     },
     {
       id: uuidv4(),
-      name: "Eve",
-      last: "Thefirst",
+      yourfunction: "Do your thing",
+      yourEmployer: "The Almighty",
+      yourLocation: "Garden of Eden",
+      yourStartDate: "0-01-01",
+      yourEndDate: "1-01-01",
+      yourDescription: "Lol",
     },
   ];
 
@@ -63,7 +75,14 @@ function PracticalExperience({ onAddPracExpInfo }) {
       yourDescription
     );
     onAddPracExpInfo(newItem);
-    setWork(newItem);
+    setWork([...work, newItem]);
+
+    setYourFunction("");
+    setYourEmployer("");
+    setYourLocation("");
+    setYourStartDate("");
+    setYourEndDate("");
+    setYourDescription("");
   };
 
   return (
@@ -77,7 +96,7 @@ function PracticalExperience({ onAddPracExpInfo }) {
           <div>
             {work.map((item) => (
               <p key={item.id} className="workTitle">
-                {item.name}
+                {item.yourfunction}
               </p>
             ))}
           </div>
