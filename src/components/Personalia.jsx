@@ -99,7 +99,7 @@ function Personalia({ onAddPersonInfo }) {
             </label>
           </div>
           <div>
-            <input type="submit" id="personaliaSubmit" />
+            <input type="submit" id="personaliaSubmit" value={"Add"} />
           </div>
         </form>
       )}
