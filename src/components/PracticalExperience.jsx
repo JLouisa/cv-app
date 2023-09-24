@@ -4,39 +4,9 @@ import { v4 as uuidv4 } from "uuid";
 import Button from "./Button.jsx";
 
 function PracticalExperience({ onAddPracExpInfo }) {
-  const workList = [
-    {
-      id: uuidv4(),
-      yourfunction: "Eating",
-      yourEmployer: "The Almighty",
-      yourLocation: "Test",
-      yourStartDate: "2022-01-01",
-      yourEndDate: "2023-01-01",
-      yourDescription: "Lol",
-    },
-    {
-      id: uuidv4(),
-      yourfunction: "Working",
-      yourEmployer: "The Almighty",
-      yourLocation: "Outside",
-      yourStartDate: "1-01-01",
-      yourEndDate: "900-01-01",
-      yourDescription: "Lol",
-    },
-    {
-      id: uuidv4(),
-      yourfunction: "Do your thing",
-      yourEmployer: "The Almighty",
-      yourLocation: "Garden of Eden",
-      yourStartDate: "0-01-01",
-      yourEndDate: "1-01-01",
-      yourDescription: "Lol",
-    },
-  ];
-
   const [showBtn, setShowBtn] = useState(false);
   const [show, setShow] = useState(false);
-  const [work, setWork] = useState(workList);
+  const [work, setWork] = useState([]);
 
   const onHandlerBtn = () => {
     setShowBtn(!showBtn);

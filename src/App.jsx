@@ -44,6 +44,7 @@ function App() {
         <DisplaySection
           thePersnInfo={[displayFirstName, displayLastName, displayEmail, displayPhoneNum, displaySeparator]}
           theEducationInfo={displayEducationInfo}
+          thePracExpInfo={displayPracExpInfo}
         />
       </main>
     </>
