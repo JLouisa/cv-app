@@ -1,9 +1,7 @@
 // import { useState } from "react";
+import PropTypes from "prop-types";
 
 function DisplaySection({ thePersnInfo, theEducationInfo }) {
-  // console.log(thePersnInfo[4]);
-  console.log("Here");
-  console.log(theEducationInfo);
   return (
     <section>
       <div className="displayPersonalia">
@@ -27,8 +25,16 @@ function DisplaySection({ thePersnInfo, theEducationInfo }) {
           );
         })}
       </div>
+      <div className="displayPracticalExperience">
+        <h3>Practical Experience</h3>
+      </div>
     </section>
   );
 }
+
+DisplaySection.propTypes = {
+  thePersnInfo: PropTypes.array,
+  theEducationInfo: PropTypes.array,
+};
 
 export default DisplaySection;

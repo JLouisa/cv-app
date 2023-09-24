@@ -4,14 +4,14 @@ import Personalia from "./Personalia.jsx";
 import EducationInfo from "./EducationInfo.jsx";
 import PracticalExperience from "./PracticalExperience.jsx";
 
-function InfoSection({ onAddPersonInfo, onAddEducationInfo }) {
+function InfoSection({ onAddPersonInfo, onAddEducationInfo, onAddPracExpInfo }) {
   return (
     <section className="infoSection">
       <Personalia onAddPersonInfo={onAddPersonInfo} />
       <hr></hr>
       <EducationInfo onAddEducationInfo={onAddEducationInfo} />
       <hr></hr>
-      <PracticalExperience />
+      <PracticalExperience onAddPracExpInfo={onAddPracExpInfo} />
       <hr></hr>
     </section>
   );
@@ -20,6 +20,7 @@ function InfoSection({ onAddPersonInfo, onAddEducationInfo }) {
 InfoSection.propTypes = {
   onAddPersonInfo: PropTypes.func,
   onAddEducationInfo: PropTypes.func,
+  onAddPracExpInfo: PropTypes.func,
 };
 
 export default InfoSection;

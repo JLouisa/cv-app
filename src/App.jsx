@@ -25,6 +25,10 @@ function App() {
     setDisplayEducationInfo([...displayEducationInfo, /*{ id: uuidv4(), info }*/ info]);
   }
   //! Display Work Experience
+  const [displayPracExpInfo, setdisplayPracExpInfo] = useState([]);
+  function addPracExpInfo(info) {
+    setdisplayPracExpInfo([...displayPracExpInfo, /*{ id: uuidv4(), info }*/ info]);
+  }
 
   return (
     <>
@@ -32,7 +36,11 @@ function App() {
         <h1>CV Builder</h1>
       </header>
       <main>
-        <InfoSection onAddPersonInfo={addPersonInfo} onAddEducationInfo={addEducationInfo} />
+        <InfoSection
+          onAddPersonInfo={addPersonInfo}
+          onAddEducationInfo={addEducationInfo}
+          onAddPracExpInfo={addPracExpInfo}
+        />
         <DisplaySection
           thePersnInfo={[displayFirstName, displayLastName, displayEmail, displayPhoneNum, displaySeparator]}
           theEducationInfo={displayEducationInfo}
