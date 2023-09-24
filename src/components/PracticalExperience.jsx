@@ -64,12 +64,50 @@ function PracticalExperience() {
             {showBtn && (
               <>
                 <form>
-                  <label htmlFor="addWorkExperience">
-                    {"Add work Experience"}
-                    <input type="text" placeholder="Add" id="addWorkExperience" autoComplete="off" />
-                  </label>
+                  <div>
+                    <label htmlFor="function">
+                      {"Function"}
+                      <input type="text" placeholder="Function" id="function" autoComplete="off" />
+                    </label>
+                  </div>
+                  <div>
+                    <label htmlFor="employer">
+                      {"Employer"}
+                      <input type="text" placeholder="Employer" id="employer" autoComplete="off" />
+                    </label>
+                  </div>
+                  <div>
+                    <label htmlFor="location">
+                      {"Location"}
+                      <input type="text" placeholder="Location" id="location" autoComplete="off" />
+                    </label>
+                  </div>
+                  <div>
+                    <label htmlFor="startDate">
+                      {"Start Date"}
+                      <input type="date" id="startDate" autoComplete="off" />
+                    </label>
+                  </div>
+                  <div>
+                    <label htmlFor="endDate">
+                      {"End Date"}
+                      <input type="date" id="endDate" autoComplete="off" />
+                    </label>
+                  </div>
+                  <div>
+                    <label htmlFor="description">{"Description"}</label>
+                    <textarea
+                      id="description"
+                      name="description"
+                      defaultValue="This is a description."
+                      rows="5"
+                      cols="33"
+                    />
+                  </div>
+                  <div>
+                    <input type="submit" value={"Add"} />
+                  </div>
                 </form>
-                <Button color={"green"} text={"Add"} onClick={addWork} />
               </>
             )}
           </div>
