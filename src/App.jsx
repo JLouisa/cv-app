@@ -4,12 +4,22 @@ import DisplaySection from "./components/DisplaySection.jsx";
 import "./styles/App.css";
 
 function App() {
-  const [personInfo, setPersonInfo] = useState("");
-
+  //! Display Personalia
+  const [displayFirstName, setDisplayFirstName] = useState("No info provided");
+  const [displayLastName, setDisplayLastName] = useState("");
+  const [displayEmail, setDisplayEmail] = useState("");
+  const [displayPhoneNum, setDisplayPhoneNum] = useState("");
   const addPersonInfo = (info) => {
-    console.log(info);
-    setPersonInfo(info);
+    // setPersonInfo(info);
+    setDisplayFirstName(info.firstName);
+    setDisplayLastName(info.lastName);
+    setDisplayEmail(info.email);
+    setDisplayPhoneNum(info.phoneNum);
   };
+
+  //! Display Education
+
+  //! Display Work Experience
 
   return (
     <>
@@ -18,7 +28,7 @@ function App() {
       </header>
       <main>
         <InfoSection onAddPersonInfo={addPersonInfo} />
-        <DisplaySection thePersnInfo={personInfo} />
+        <DisplaySection thePersnInfo={[displayFirstName, displayLastName, displayEmail, displayPhoneNum]} />
       </main>
     </>
   );

@@ -1,25 +1,13 @@
-import { useState } from "react";
+// import { useState } from "react";
 
-function DisplaySection({ firstName, lastName, email, phoneNum }) {
-  const [displayFirstName, setDisplayFirstName] = useState("No info provided");
-  const [displayLastName, setDisplayLastName] = useState("");
-  const [displayEmail, setDisplayEmail] = useState("");
-  const [displayPhoneNum, setDisplayPhoneNum] = useState("");
-
-  // function displayinfo() {
-  setDisplayFirstName(firstName);
-  setDisplayLastName(lastName);
-  setDisplayEmail(email);
-  setDisplayPhoneNum(phoneNum);
-  // }
-
+function DisplaySection({ thePersnInfo }) {
   return (
     <section>
       <h1>Personalia Information</h1>
-      <p>{displayFirstName}</p>
-      <p>{displayLastName}</p>
-      <p>{displayEmail}</p>
-      <p>{displayPhoneNum}</p>
+      <p>{thePersnInfo[0]}</p>
+      <p>{thePersnInfo[1]}</p>
+      <p>{thePersnInfo[2]}</p>
+      <p>{thePersnInfo[3]}</p>
     </section>
   );
 }
