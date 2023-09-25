@@ -10,33 +10,33 @@ function DisplaySection({ thePersnInfo, theEducationInfo, thePracExpInfo }) {
         <p>{thePersnInfo[1]}</p>
         <p>{thePersnInfo[2]}</p>
         <p>{thePersnInfo[3]}</p>
-        {thePersnInfo[4] && <hr></hr>}
+        {thePersnInfo[4]}
       </div>
+      <hr></hr>
       <div className="displayEducation">
         <h2>Education Information</h2>
         {theEducationInfo.map((edu) => {
           return (
             <div key={edu.id}>
-              <p>{edu.title}</p>
+              <p className="eduTitle">{edu.title}</p>
               <p>{edu.school}</p>
               <p>{edu.date}</p>
-              <hr></hr>
             </div>
           );
         })}
       </div>
       <div className="displayPracticalExperience">
+        <hr></hr>
         <h3>Practical Experience</h3>
         {thePracExpInfo.map((exp) => {
           return (
-            <div key={exp.id}>
-              <p>{exp.yourFunction}</p>
+            <div className="eduDivs" key={exp.id}>
+              <p className="eduTitle">{exp.yourFunction}</p>
               <p>{exp.yourEmployer}</p>
               <p>{exp.yourLocation}</p>
               <p>{exp.yourStartDate}</p>
               <p>{exp.yourEndDate}</p>
               <p>{exp.yourDescription}</p>
-              <hr></hr>
             </div>
           );
         })}

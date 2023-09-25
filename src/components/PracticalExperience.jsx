@@ -17,14 +17,14 @@ function PracticalExperience({ onAddPracExpInfo }) {
   };
 
   class NewPracExp {
-    constructor(yourfunction, yourEmployer, yourLocation, yourStartDate, yourEndDate, yourDescription) {
-      (this.id = uuidv4()),
-        (this.yourfunction = yourfunction),
+    constructor(yourFunction, yourEmployer, yourLocation, yourStartDate, yourEndDate, yourDescription) {
+      (this.yourFunction = yourFunction),
         (this.yourEmployer = yourEmployer),
         (this.yourLocation = yourLocation),
         (this.yourStartDate = yourStartDate),
         (this.yourEndDate = yourEndDate),
-        (this.yourDescription = yourDescription);
+        (this.yourDescription = yourDescription),
+        (this.id = uuidv4());
     }
   }
 
@@ -53,6 +53,7 @@ function PracticalExperience({ onAddPracExpInfo }) {
     setYourStartDate("");
     setYourEndDate("");
     setYourDescription("");
+    onHandlerBtn();
   };
 
   return (
@@ -66,7 +67,7 @@ function PracticalExperience({ onAddPracExpInfo }) {
           <div>
             {work.map((item) => (
               <p key={item.id} className="workTitle">
-                {item.yourfunction}
+                {item.yourFunction}
               </p>
             ))}
           </div>
