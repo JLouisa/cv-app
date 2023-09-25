@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { v4 as uuidv4 } from "uuid";
 import Button from "./Button.jsx";
 
-function PracticalExperience({ onAddPracExpInfo }) {
+function PracticalExperience({ onAddPracExpInfo, onEditPracExp }) {
   const [showBtn, setShowBtn] = useState(false);
   const [show, setShow] = useState(false);
   const [work, setWork] = useState([]);
@@ -34,8 +34,8 @@ function PracticalExperience({ onAddPracExpInfo }) {
   const [yourStartDate, setYourStartDate] = useState("");
   const [yourEndDate, setYourEndDate] = useState("");
   const [yourDescription, setYourDescription] = useState("");
-  const onSubmit = (e) => {
-    e.preventDefault();
+
+  const onSubmit = () => {
     const newItem = new NewPracExp(
       yourFunction,
       yourEmployer,
@@ -44,16 +44,30 @@ function PracticalExperience({ onAddPracExpInfo }) {
       yourEndDate,
       yourDescription
     );
+
     onAddPracExpInfo(newItem);
     setWork([...work, newItem]);
 
-    setYourFunction("");
-    setYourEmployer("");
-    setYourLocation("");
-    setYourStartDate("");
-    setYourEndDate("");
-    setYourDescription("");
+    // setYourFunction("");
+    // setYourEmployer("");
+    // setYourLocation("");
+    // setYourStartDate("");
+    // setYourEndDate("");
+    // setYourDescription("");
     onHandlerBtn();
+  };
+
+  const onEdit = (item) => {
+    const newItem = new NewPracExp(
+      yourFunction,
+      yourEmployer,
+      yourLocation,
+      yourStartDate,
+      yourEndDate,
+      yourDescription
+    );
+    onEditPracExp(item, newItem);
+    document.getElementById("pracExpFormAdd").reset();
   };
 
   const [isActive, setIsActive] = useState(false);
@@ -71,24 +85,116 @@ function PracticalExperience({ onAddPracExpInfo }) {
         <div>
           <div>
             {work.map((item) => (
-              <div
-                {isActive && (className="workTitle clicked")}>
-                <p
-                  key={item.id}
-                  className="workTitle"
-                  onDoubleClick={() => {
-                    setIsActive(!isActive);
-                  }}
-                >
-                  {item.yourFunction}
-                </p>
-              </div>
+              <p
+                key={item.id}
+                className="workTitle"
+                onDoubleClick={() => {
+                  console.log(item);
+                  console.log(item.id);
+                  setIsActive(true);
+                }}
+              >
+                {item.yourFunction}
+                {isActive && (
+                  <form
+                    onSubmit={(e) => {
+                      e.preventDefault();
+                      onEdit(item);
+                    }}
+                  >
+                    <label htmlFor="editFunction">
+                      {"Function"}
+                      <input
+                        type="text"
+                        id="editFunction"
+                        defaultValue={item.yourFunction}
+                        onChange={(e) => {
+                          setYourFunction(e.target.value);
+                        }}
+                      />
+                    </label>
+                    <label htmlFor="editEmployer">
+                      {"Employer"}
+                      <input
+                        type="text"
+                        id="editEmployer"
+                        defaultValue={item.yourEmployer}
+                        onChange={(e) => {
+                          setYourEmployer(e.target.value);
+                        }}
+                      />
+                    </label>
+                    <label htmlFor="editLocation">
+                      {"Location"}
+                      <input
+                        type="text"
+                        id="editLocation"
+                        defaultValue={item.yourLocation}
+                        onChange={(e) => {
+                          setYourLocation(e.target.value);
+                        }}
+                      />
+                    </label>
+                    <label htmlFor="editStartDate">
+                      {"Start Date"}
+                      <input
+                        type="date"
+                        id="editStartDate"
+                        defaultValue={item.yourStartDate}
+                        onChange={(e) => {
+                          setYourStartDate(e.target.value);
+                        }}
+                      />
+                    </label>
+                    <label htmlFor="editEndDate">
+                      {"End Date"}
+                      <input
+                        type="date"
+                        id="editEndDate"
+                        defaultValue={item.yourEndDate}
+                        onChange={(e) => {
+                          setYourEndDate(e.target.value);
+                        }}
+                      />
+                    </label>
+                    <label htmlFor="editDescription">
+                      {"Description"}
+                      <textarea
+                        type="text"
+                        id="editDescription"
+                        rows="5"
+                        cols="33"
+                        defaultValue={item.yourDescription}
+                        onChange={(e) => {
+                          setYourDescription(e.target.value);
+                        }}
+                      />
+                    </label>
+                    <div>
+                      <input type="submit" value={"Edit"} />
+                      <Button
+                        text="Cancel"
+                        onClick={() => {
+                          setIsActive(false);
+                        }}
+                      />
+                    </div>
+                  </form>
+                )}
+              </p>
             ))}
           </div>
           <div>
             {showBtn && (
               <>
-                <form onSubmit={onSubmit}>
+                <form
+                  id="pracExpFormAdd"
+                  onSubmit={(e) => {
+                    e.preventDefault();
+                    onSubmit();
+                    document.getElementById("pracExpFormAdd").reset();
+                  }}
+                >
                   <div>
                     <label htmlFor="function">
                       {"Function"}
@@ -193,6 +299,7 @@ function PracticalExperience({ onAddPracExpInfo }) {
 
 PracticalExperience.propTypes = {
   onAddPracExpInfo: PropTypes.func,
+  onEditPracExp: PropTypes.func,
 };
 
 export default PracticalExperience;

@@ -67,6 +67,7 @@ main > section {
 }
 
 .workTitle {
+  display: block;
   border: 1px solid black;
   font-weight: 700;
   padding: 1em;
@@ -78,4 +79,11 @@ main > section {
 .eduTitle {
   font-size: 1.5rem;
   font-weight: 700;
+}
+
+.workTitle > form {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  gap: 1em;
 }
