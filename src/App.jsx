@@ -1,6 +1,6 @@
 import { useState } from "react";
 import InfoSection from "./components/InfoSection.jsx";
-import DisplaySection from "./components/DisplaySection.jsx";
+import { DisplaySection } from "./components/DisplaySection.jsx";
 // import { v4 as uuidv4 } from "uuid";
 import "./styles/App.css";
 

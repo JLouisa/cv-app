@@ -31,11 +31,15 @@ function DisplaySection({ thePersnInfo, theEducationInfo, thePracExpInfo }) {
         {thePracExpInfo.map((exp) => {
           return (
             <div className="eduDivs" key={exp.id}>
-              <p className="eduTitle">{exp.yourFunction}</p>
-              <p>{exp.yourEmployer}</p>
-              <p>{exp.yourLocation}</p>
-              <p>{exp.yourStartDate}</p>
-              <p>{exp.yourEndDate}</p>
+              <p className="eduTitle">
+                <span>{exp.yourFunction}</span>{" "}
+                <span>
+                  From {exp.yourStartDate} to {exp.yourEndDate}
+                </span>
+              </p>
+              <p>
+                {exp.yourEmployer}, {exp.yourLocation}
+              </p>
               <p>{exp.yourDescription}</p>
             </div>
           );
@@ -51,4 +55,4 @@ DisplaySection.propTypes = {
   thePracExpInfo: PropTypes.array,
 };
 
-export default DisplaySection;
+export { DisplaySection };

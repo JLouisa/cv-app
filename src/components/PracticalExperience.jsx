@@ -142,7 +142,7 @@ function PracticalExperience({ onAddPracExpInfo, onEditPracExp }) {
                     <label htmlFor="editStartDate">
                       {"Start Date"}
                       <input
-                        type="date"
+                        type="month"
                         id="editStartDate"
                         defaultValue={item.yourStartDate}
                         onChange={(e) => {
@@ -153,7 +153,7 @@ function PracticalExperience({ onAddPracExpInfo, onEditPracExp }) {
                     <label htmlFor="editEndDate">
                       {"End Date"}
                       <input
-                        type="date"
+                        type="month"
                         id="editEndDate"
                         defaultValue={item.yourEndDate}
                         onChange={(e) => {
@@ -248,7 +248,7 @@ function PracticalExperience({ onAddPracExpInfo, onEditPracExp }) {
                     <label htmlFor="startDate">
                       {"Start Date"}
                       <input
-                        type="date"
+                        type="month"
                         id="startDate"
                         autoComplete="off"
                         value={yourStartDate}
@@ -262,7 +262,7 @@ function PracticalExperience({ onAddPracExpInfo, onEditPracExp }) {
                     <label htmlFor="endDate">
                       {"End Date"}
                       <input
-                        type="date"
+                        type="month"
                         id="endDate"
                         autoComplete="off"
                         value={yourEndDate}

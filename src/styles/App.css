@@ -79,6 +79,8 @@ main > section {
 .eduTitle {
   font-size: 1.5rem;
   font-weight: 700;
+  display: flex;
+  justify-content: space-between;
 }
 
 .workTitle > form {
