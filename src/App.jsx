@@ -39,7 +39,25 @@ function App() {
         console.log("finding index");
         console.log(ind);
         const newArr = [...displayPracExpInfo];
-        newArr.splice(ind, 1, newItem);
+        // newArr.splice(ind, 1, newItem);
+        if (newItem.yourFunction !== "") {
+          newArr[ind].yourFunction = newItem.yourFunction;
+        }
+        if (newItem.yourEmployer !== "") {
+          newArr[ind].yourEmployer = newItem.yourEmployer;
+        }
+        if (newItem.yourLocation !== "") {
+          newArr[ind].yourLocation = newItem.yourLocation;
+        }
+        if (newItem.yourStartDate !== "") {
+          newArr[ind].yourStartDate = newItem.yourStartDate;
+        }
+        if (newItem.yourEndDate !== "") {
+          newArr[ind].yourEndDate = newItem.yourEndDate;
+        }
+        if (newItem.yourDescription !== "") {
+          newArr[ind].yourDescription = newItem.yourDescription;
+        }
         setdisplayPracExpInfo(newArr);
       }
     });

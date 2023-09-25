@@ -47,15 +47,18 @@ function PracticalExperience({ onAddPracExpInfo, onEditPracExp }) {
 
     onAddPracExpInfo(newItem);
     setWork([...work, newItem]);
-
-    // setYourFunction("");
-    // setYourEmployer("");
-    // setYourLocation("");
-    // setYourStartDate("");
-    // setYourEndDate("");
-    // setYourDescription("");
+    resetForms();
     onHandlerBtn();
   };
+
+  function resetForms() {
+    setYourFunction("");
+    setYourEmployer("");
+    setYourLocation("");
+    setYourStartDate("");
+    setYourEndDate("");
+    setYourDescription("");
+  }
 
   const onEdit = (item) => {
     const newItem = new NewPracExp(
@@ -67,7 +70,8 @@ function PracticalExperience({ onAddPracExpInfo, onEditPracExp }) {
       yourDescription
     );
     onEditPracExp(item, newItem);
-    document.getElementById("pracExpFormAdd").reset();
+    resetForms();
+    setIsActive(false);
   };
 
   const [isActive, setIsActive] = useState(false);
