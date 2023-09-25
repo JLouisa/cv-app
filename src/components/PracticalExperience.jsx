@@ -56,6 +56,11 @@ function PracticalExperience({ onAddPracExpInfo }) {
     onHandlerBtn();
   };
 
+  const [isActive, setIsActive] = useState(false);
+  // const editShowExp = () => {
+  //   setIsActive(!isActive);
+  // };
+
   return (
     <>
       <div className="practicalExperience">
@@ -66,9 +71,18 @@ function PracticalExperience({ onAddPracExpInfo }) {
         <div>
           <div>
             {work.map((item) => (
-              <p key={item.id} className="workTitle">
-                {item.yourFunction}
-              </p>
+              <div
+                {isActive && (className="workTitle clicked")}>
+                <p
+                  key={item.id}
+                  className="workTitle"
+                  onDoubleClick={() => {
+                    setIsActive(!isActive);
+                  }}
+                >
+                  {item.yourFunction}
+                </p>
+              </div>
             ))}
           </div>
           <div>
