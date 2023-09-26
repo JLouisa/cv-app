@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { useState } from "react";
 import Button from "./Button.jsx";
 
@@ -102,5 +103,9 @@ function Personalia({ onAddPersonInfo }) {
     </>
   );
 }
+
+Personalia.propTypes = {
+  onAddPersonInfo: PropTypes.func,
+};
 
 export default Personalia;

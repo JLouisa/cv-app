@@ -7,9 +7,6 @@ import { PracticalExperience } from "./PracticalExperience.jsx";
 
 function InfoSection({ onAddPersonInfo, onAddEducationInfo, onAddPracExpInfo, onEditPracExp }) {
   const [isActive, setIsActive] = useState(false);
-  // const editShowExp = () => {
-  //   setIsActive(!isActive);
-  // };
 
   return (
     <section className="infoSection">

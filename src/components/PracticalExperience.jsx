@@ -73,7 +73,7 @@ function PracticalExperience({ onAddPracExpInfo, onEditPracExp, setIsActive }) {
             )}
           </div>
           <div className="btnAddExp">
-            <Button color={"green"} text={"Add Work Experience"} onClick={onHandlerBtn} />
+            <Button color={"green"} text={showBtn ? "Cancel" : "Add Work Experience"} onClick={onHandlerBtn} />
           </div>
         </div>
       )}
