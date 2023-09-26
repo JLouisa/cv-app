@@ -42,9 +42,6 @@ function EducationList({ theMain, onEditMainEducation, editEduList, setIsActive 
 EducationList.propTypes = {
   theMain: PropTypes.object,
   onEditMainEducation: PropTypes.func,
-  onAddPersonInfo: PropTypes.func,
-  eduList: PropTypes.array,
-  setEduList: PropTypes.func,
   editEduList: PropTypes.func,
   setIsActive: PropTypes.func,
 };

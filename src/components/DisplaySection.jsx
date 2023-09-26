@@ -53,9 +53,6 @@ function DisplaySection({ theMain, thePracExpInfo }) {
 
 DisplaySection.propTypes = {
   theMain: PropTypes.object,
-  // thePersonaliaInfo: PropTypes.array,
-  // thePersnInfo: PropTypes.array,
-  // theEducationInfo: PropTypes.array,
   thePracExpInfo: PropTypes.array,
 };
 

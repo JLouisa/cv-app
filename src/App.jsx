@@ -17,13 +17,7 @@ function App() {
   // const [displayPersonalia, setDisplayPersonalia] = useState([]);
 
   //! Display Education
-  const [displayEducationInfo, setDisplayEducationInfo] = useState([]);
-  // function addEducationInfo(info) {
-  //   setDisplayEducationInfo([...displayEducationInfo, /*{ id: uuidv4(), info }*/ info]);
-  // }
-  function editEducationInfo(info) {
-    setDisplayEducationInfo(info);
-  }
+  // const [displayEducationInfo, setDisplayEducationInfo] = useState([]);
 
   //! Display Work Experience
   const [displayPracExpInfo, setdisplayPracExpInfo] = useState([]);
@@ -97,13 +91,8 @@ function App() {
           onEditMainEducation={editMainEducation}
           onAddPracExpInfo={addPracExpInfo}
           onEditPracExp={editPracExp}
-          onEditEducationInfo={editEducationInfo}
         />
-        <DisplaySection
-          theMain={mainInfo}
-          theEducationInfo={displayEducationInfo}
-          thePracExpInfo={displayPracExpInfo}
-        />
+        <DisplaySection theMain={mainInfo} thePracExpInfo={displayPracExpInfo} />
       </main>
     </>
   );

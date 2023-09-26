@@ -4,11 +4,9 @@ import { v4 as uuidv4 } from "uuid";
 import Button from "./Button.jsx";
 import { EducationList } from "./EducationList.jsx";
 
-function EducationInfo({ theMain, onMainEducation, onEditMainEducation, onEditEducationInfo }) {
+function EducationInfo({ theMain, onMainEducation, onEditMainEducation }) {
   const [show, setShow] = useState(false);
   const [isActive, setIsActive] = useState(false);
-
-  const [eduList, setEduList] = useState([]);
 
   const [schoolName, setSchoolName] = useState("");
   const [titleStudy, setTitleStudy] = useState("");
@@ -26,18 +24,11 @@ function EducationInfo({ theMain, onMainEducation, onEditMainEducation, onEditEd
 
   const onSumit = () => {
     const newItem = new NewEdu(titleStudy, schoolName, date);
-    setEduList([...eduList, newItem]);
-    onMainEducation(newItem); /* <--------------------*/
+    onMainEducation(newItem);
     setSchoolName("");
     setTitleStudy("");
     setDate("");
   };
-
-  // const editEduList = (item, title, school, date) => {
-  //   const newItem = new NewEdu(title, school, date);
-  //   newItem.id = item.id;
-  //   onEditMainEducation(item, newItem);
-  // };
 
   const editEduList = (item, title, school, date) => {
     const foundIndex = theMain.main.education.findIndex((x) => x.id === item.id);
@@ -51,8 +42,6 @@ function EducationInfo({ theMain, onMainEducation, onEditMainEducation, onEditEd
     if (date !== "") {
       newArr[foundIndex].date = date;
     }
-    setEduList(newArr);
-    onEditEducationInfo(newArr);
     onEditMainEducation(theMain.main.education[foundIndex], newArr[foundIndex]);
   };
 
@@ -143,8 +132,6 @@ EducationInfo.propTypes = {
   theMain: PropTypes.object,
   onMainEducation: PropTypes.func,
   onEditMainEducation: PropTypes.func,
-  onAddEducationInfo: PropTypes.func,
-  onEditEducationInfo: PropTypes.func,
 };
 
 export default EducationInfo;

@@ -10,10 +10,9 @@ function InfoSection({
   onMainPersonalia,
   onMainEducation,
   onEditMainEducation,
-  onAddEducationInfo,
   onAddPracExpInfo,
   onEditPracExp,
-  onEditEducationInfo,
+  // onEditEducationInfo,
 }) {
   const [isActive, setIsActive] = useState(false);
 
@@ -25,7 +24,7 @@ function InfoSection({
         theMain={theMain}
         onMainEducation={onMainEducation}
         onEditMainEducation={onEditMainEducation}
-        onEditEducationInfo={onEditEducationInfo}
+        // onEditEducationInfo={onEditEducationInfo}
       />
       <hr></hr>
       <PracticalExperience
