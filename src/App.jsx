@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import InfoSection from "./components/InfoSection.jsx";
 import { DisplaySection } from "./components/DisplaySection.jsx";
-// import LocalStorageApp from "./components/LocalStorageApp.jsx";
 import "./styles/App.css";
 
 function App() {
