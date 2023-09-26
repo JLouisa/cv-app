@@ -114,7 +114,7 @@ function FormEditPracExp({ onEditPracExp, item, setIsActive }) {
 
 FormEditPracExp.propTypes = {
   onEditPracExp: PropTypes.func,
-  item: PropTypes.array,
+  item: PropTypes.object,
   editShowExp: PropTypes.func,
   setIsActive: PropTypes.func,
 };

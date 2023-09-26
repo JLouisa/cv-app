@@ -13,17 +13,14 @@ class NewPracExp {
       (this.yourStartDate = yourStartDate),
       (this.yourEndDate = yourEndDate),
       (this.yourDescription = yourDescription),
+      (this.selected = false),
       (this.id = uuidv4());
   }
 }
-function PracticalExperience({ onAddPracExpInfo, onEditPracExp }) {
-  const [show, setShow] = useState(false);
+function PracticalExperience({ onAddPracExpInfo, onEditPracExp, setIsActive, isActive }) {
   const [work, setWork] = useState([]);
-  const [isActive, setIsActive] = useState(false);
 
-  const editShowExp = () => {
-    setIsActive(!isActive);
-  };
+  const [show, setShow] = useState(false);
   const onHandler = () => {
     setShow(!show);
   };
@@ -47,13 +44,12 @@ function PracticalExperience({ onAddPracExpInfo, onEditPracExp }) {
                 key={item.id}
                 className="workTitle"
                 onDoubleClick={() => {
-                  console.log(item);
-                  console.log(item.id);
-                  editShowExp();
+                  item.selected = !item.selected;
+                  setIsActive(item.selected);
                 }}
               >
                 {item.yourFunction}
-                {isActive && (
+                {item.selected && (
                   <FormEditPracExp
                     onEditPracExp={onEditPracExp}
                     item={item}
@@ -88,6 +84,8 @@ function PracticalExperience({ onAddPracExpInfo, onEditPracExp }) {
 PracticalExperience.propTypes = {
   onAddPracExpInfo: PropTypes.func,
   onEditPracExp: PropTypes.func,
+  setIsActive: PropTypes.func,
+  isActive: PropTypes.bool,
 };
 
 export { PracticalExperience, NewPracExp };

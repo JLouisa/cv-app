@@ -36,8 +36,6 @@ function App() {
     displayPracExpInfo.forEach((exp) => {
       if (exp.id === item.id) {
         const ind = displayPracExpInfo.indexOf(exp);
-        console.log("finding index");
-        console.log(ind);
         const newArr = [...displayPracExpInfo];
         // newArr.splice(ind, 1, newItem);
         if (newItem.yourFunction !== "") {
@@ -57,6 +55,9 @@ function App() {
         }
         if (newItem.yourDescription !== "") {
           newArr[ind].yourDescription = newItem.yourDescription;
+        }
+        if (newItem.selected !== "") {
+          newArr[ind].selected = newItem.selected;
         }
         setdisplayPracExpInfo(newArr);
       }
