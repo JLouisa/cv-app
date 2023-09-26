@@ -20,8 +20,6 @@ function FormEditPracExp({ onEditPracExp, item, setIsActive }) {
       yourEndDate,
       yourDescription
     );
-    // console.log("newItem");
-    // console.log(newItem);
     onEditPracExp(item, newItem);
     setIsActive(false);
   };
@@ -115,10 +113,8 @@ function FormEditPracExp({ onEditPracExp, item, setIsActive }) {
 }
 
 FormEditPracExp.propTypes = {
-  // theMain: PropTypes.object,
   onEditPracExp: PropTypes.func,
   item: PropTypes.object,
-  // editShowExp: PropTypes.func,
   setIsActive: PropTypes.func,
 };
 

@@ -34,8 +34,6 @@ function PracticalExperience({ theMain, onMainPracExp, onEditMainPracExp, setIsA
   function onEditPracExp(item, newItem) {
     const foundIndex = theMain.main.pracExp.findIndex((x) => x.id === item.id);
     const newArr = [...theMain.main.pracExp];
-    // console.log("newArr in onEditPracExp");
-    // console.log(newArr);
 
     if (newItem.yourFunction !== "") {
       newArr[foundIndex].yourFunction = newItem.yourFunction;
@@ -58,8 +56,6 @@ function PracticalExperience({ theMain, onMainPracExp, onEditMainPracExp, setIsA
     if (newItem.selected !== "") {
       newArr[foundIndex].selected = newItem.selected;
     }
-    console.log(theMain.main.pracExp[foundIndex]);
-    console.log(newArr[foundIndex]);
     onEditMainPracExp(theMain.main.pracExp[foundIndex], newArr[foundIndex]);
   }
 
@@ -84,9 +80,7 @@ function PracticalExperience({ theMain, onMainPracExp, onEditMainPracExp, setIsA
                 {item.yourFunction}
                 {item.selected && (
                   <FormEditPracExp
-                    // theMain={theMain}
                     onEditPracExp={onEditPracExp}
-                    // editMainPracExp={editMainPracExp}
                     item={item}
                     setIsActive={setIsActive}
                     onHandler={onHandler}
@@ -100,7 +94,6 @@ function PracticalExperience({ theMain, onMainPracExp, onEditMainPracExp, setIsA
               <>
                 <FormAddPracExp
                   onMainPracExp={onMainPracExp}
-                  // onAddPracExpInfo={onAddPracExpInfo}
                   work={work}
                   setWork={setWork}
                   onHandlerBtn={onHandlerBtn}
@@ -120,8 +113,7 @@ function PracticalExperience({ theMain, onMainPracExp, onEditMainPracExp, setIsA
 PracticalExperience.propTypes = {
   theMain: PropTypes.object,
   onMainPracExp: PropTypes.func,
-  editMainPracExp: PropTypes.func,
-  onEditPracExp: PropTypes.func,
+  onEditMainPracExp: PropTypes.func,
   setIsActive: PropTypes.func,
 };
 

@@ -1,7 +1,6 @@
 import { useState } from "react";
 import InfoSection from "./components/InfoSection.jsx";
 import { DisplaySection } from "./components/DisplaySection.jsx";
-// import { v4 as uuidv4 } from "uuid";
 import "./styles/App.css";
 
 function App() {
@@ -13,49 +12,11 @@ function App() {
 
   const [mainInfo, setMain] = useState(mainObj);
 
-  //! Display Personalia
-  // const [displayPersonalia, setDisplayPersonalia] = useState([]);
-
-  //! Display Education
-  // const [displayEducationInfo, setDisplayEducationInfo] = useState([]);
-
   //! Display Work Experience
   const [displayPracExpInfo, setdisplayPracExpInfo] = useState([]);
   function addPracExpInfo(info) {
-    setdisplayPracExpInfo([...displayPracExpInfo, /*{ id: uuidv4(), info }*/ info]);
+    setdisplayPracExpInfo([...displayPracExpInfo, info]);
   }
-
-  //! Edit Practical Experience
-  // function editPracExp(item, newItem) {
-  //   displayPracExpInfo.forEach((exp) => {
-  //     if (exp.id === item.id) {
-  //       const ind = displayPracExpInfo.indexOf(exp);
-  //       const newArr = [...displayPracExpInfo];
-  //       if (newItem.yourFunction !== "") {
-  //         newArr[ind].yourFunction = newItem.yourFunction;
-  //       }
-  //       if (newItem.yourEmployer !== "") {
-  //         newArr[ind].yourEmployer = newItem.yourEmployer;
-  //       }
-  //       if (newItem.yourLocation !== "") {
-  //         newArr[ind].yourLocation = newItem.yourLocation;
-  //       }
-  //       if (newItem.yourStartDate !== "") {
-  //         newArr[ind].yourStartDate = newItem.yourStartDate;
-  //       }
-  //       if (newItem.yourEndDate !== "") {
-  //         newArr[ind].yourEndDate = newItem.yourEndDate;
-  //       }
-  //       if (newItem.yourDescription !== "") {
-  //         newArr[ind].yourDescription = newItem.yourDescription;
-  //       }
-  //       if (newItem.selected !== "") {
-  //         newArr[ind].selected = newItem.selected;
-  //       }
-  //       setdisplayPracExpInfo(newArr);
-  //     }
-  //   });
-  // }
 
   //! Add to or Edit Main Object for Personalia
   const mainPersonalia = (person) => {
@@ -104,7 +65,6 @@ function App() {
           onMainPracExp={mainPracExp}
           onEditMainPracExp={editMainPracExp}
           onAddPracExpInfo={addPracExpInfo}
-          // onEditPracExp={editPracExp}
         />
         <DisplaySection theMain={mainInfo} thePracExpInfo={displayPracExpInfo} />
       </main>

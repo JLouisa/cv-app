@@ -1,4 +1,3 @@
-// import { useState } from "react";
 import PropTypes from "prop-types";
 import { useState } from "react";
 import Personalia from "./Personalia.jsx";
@@ -12,7 +11,6 @@ function InfoSection({
   onEditMainEducation,
   onMainPracExp,
   onEditMainPracExp,
-  // onEditPracExp,
 }) {
   const [isActive, setIsActive] = useState(false);
 
