@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { useState } from "react";
 import Button from "./Button.jsx";
 
-function Personalia({ onAddPersonaliaInfo }) {
+function Personalia({ theMain, onMainPersonalia }) {
   const [show, setShow] = useState(false);
 
   // const [personInfo, setPersonInfo] = useState([]);
@@ -33,7 +33,7 @@ function Personalia({ onAddPersonaliaInfo }) {
   function onSubmit(e) {
     e.preventDefault();
     const newPersonInfo = new Personalia(firstName, lastName, email, phoneNum);
-    onAddPersonaliaInfo(newPersonInfo);
+    onMainPersonalia(newPersonInfo);
   }
 
   return (
@@ -113,7 +113,8 @@ function Personalia({ onAddPersonaliaInfo }) {
 }
 
 Personalia.propTypes = {
-  onAddPersonaliaInfo: PropTypes.func,
+  theMain: PropTypes.object,
+  onMainPersonalia: PropTypes.func,
 };
 
 export default Personalia;

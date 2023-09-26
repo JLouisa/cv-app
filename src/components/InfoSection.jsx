@@ -6,7 +6,8 @@ import EducationInfo from "./EducationInfo.jsx";
 import { PracticalExperience } from "./PracticalExperience.jsx";
 
 function InfoSection({
-  onAddPersonaliaInfo,
+  theMain,
+  onMainPersonalia,
   onAddEducationInfo,
   onAddPracExpInfo,
   onEditPracExp,
@@ -16,7 +17,7 @@ function InfoSection({
 
   return (
     <section className="infoSection">
-      <Personalia onAddPersonaliaInfo={onAddPersonaliaInfo} />
+      <Personalia theMain={theMain} onMainPersonalia={onMainPersonalia} />
       <hr></hr>
       <EducationInfo onAddEducationInfo={onAddEducationInfo} onEditEducationInfo={onEditEducationInfo} />
       <hr></hr>
@@ -32,7 +33,8 @@ function InfoSection({
 }
 
 InfoSection.propTypes = {
-  onAddPersonaliaInfo: PropTypes.func,
+  theMain: PropTypes.object,
+  onMainPersonalia: PropTypes.func,
   onAddEducationInfo: PropTypes.func,
   onAddPracExpInfo: PropTypes.func,
   onEditPracExp: PropTypes.func,

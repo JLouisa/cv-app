@@ -7,16 +7,14 @@ import "./styles/App.css";
 function App() {
   //! The Main Object
   const mainObj = {
-    personalia: {},
-    education: {},
-    pracExp: {},
-    extra: {},
+    side: {},
+    main: { personalia: {}, education: {}, pracExp: {}, extra: {} },
   };
 
-  const [main, setMain] = useState(mainObj);
+  const [mainInfo, setMain] = useState(mainObj);
 
   //! Display Personalia
-  const [displayPersonalia, setDisplayPersonalia] = useState([]);
+  // const [displayPersonalia, setDisplayPersonalia] = useState([]);
 
   //! Display Education
   const [displayEducationInfo, setDisplayEducationInfo] = useState([]);
@@ -65,6 +63,13 @@ function App() {
     });
   }
 
+  //! Add to or Edit Main Object for Personalia
+  const mainPersonalia = (person) => {
+    const newObj = Object.assign({}, mainInfo);
+    newObj.main.personalia = { ...person };
+    setMain(newObj);
+  };
+
   return (
     <>
       <header>
@@ -72,14 +77,15 @@ function App() {
       </header>
       <main>
         <InfoSection
-          onAddPersonaliaInfo={setDisplayPersonalia}
+          theMain={mainInfo}
+          onMainPersonalia={mainPersonalia}
           onAddEducationInfo={addEducationInfo}
           onAddPracExpInfo={addPracExpInfo}
           onEditPracExp={editPracExp}
           onEditEducationInfo={editEducationInfo}
         />
         <DisplaySection
-          thePersonaliaInfo={displayPersonalia}
+          theMain={mainInfo}
           theEducationInfo={displayEducationInfo}
           thePracExpInfo={displayPracExpInfo}
         />
