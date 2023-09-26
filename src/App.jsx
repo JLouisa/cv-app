@@ -26,36 +26,36 @@ function App() {
   }
 
   //! Edit Practical Experience
-  function editPracExp(item, newItem) {
-    displayPracExpInfo.forEach((exp) => {
-      if (exp.id === item.id) {
-        const ind = displayPracExpInfo.indexOf(exp);
-        const newArr = [...displayPracExpInfo];
-        if (newItem.yourFunction !== "") {
-          newArr[ind].yourFunction = newItem.yourFunction;
-        }
-        if (newItem.yourEmployer !== "") {
-          newArr[ind].yourEmployer = newItem.yourEmployer;
-        }
-        if (newItem.yourLocation !== "") {
-          newArr[ind].yourLocation = newItem.yourLocation;
-        }
-        if (newItem.yourStartDate !== "") {
-          newArr[ind].yourStartDate = newItem.yourStartDate;
-        }
-        if (newItem.yourEndDate !== "") {
-          newArr[ind].yourEndDate = newItem.yourEndDate;
-        }
-        if (newItem.yourDescription !== "") {
-          newArr[ind].yourDescription = newItem.yourDescription;
-        }
-        if (newItem.selected !== "") {
-          newArr[ind].selected = newItem.selected;
-        }
-        setdisplayPracExpInfo(newArr);
-      }
-    });
-  }
+  // function editPracExp(item, newItem) {
+  //   displayPracExpInfo.forEach((exp) => {
+  //     if (exp.id === item.id) {
+  //       const ind = displayPracExpInfo.indexOf(exp);
+  //       const newArr = [...displayPracExpInfo];
+  //       if (newItem.yourFunction !== "") {
+  //         newArr[ind].yourFunction = newItem.yourFunction;
+  //       }
+  //       if (newItem.yourEmployer !== "") {
+  //         newArr[ind].yourEmployer = newItem.yourEmployer;
+  //       }
+  //       if (newItem.yourLocation !== "") {
+  //         newArr[ind].yourLocation = newItem.yourLocation;
+  //       }
+  //       if (newItem.yourStartDate !== "") {
+  //         newArr[ind].yourStartDate = newItem.yourStartDate;
+  //       }
+  //       if (newItem.yourEndDate !== "") {
+  //         newArr[ind].yourEndDate = newItem.yourEndDate;
+  //       }
+  //       if (newItem.yourDescription !== "") {
+  //         newArr[ind].yourDescription = newItem.yourDescription;
+  //       }
+  //       if (newItem.selected !== "") {
+  //         newArr[ind].selected = newItem.selected;
+  //       }
+  //       setdisplayPracExpInfo(newArr);
+  //     }
+  //   });
+  // }
 
   //! Add to or Edit Main Object for Personalia
   const mainPersonalia = (person) => {
@@ -102,8 +102,9 @@ function App() {
           onMainEducation={mainEducation}
           onEditMainEducation={editMainEducation}
           onMainPracExp={mainPracExp}
+          onEditMainPracExp={editMainPracExp}
           onAddPracExpInfo={addPracExpInfo}
-          onEditPracExp={editPracExp}
+          // onEditPracExp={editPracExp}
         />
         <DisplaySection theMain={mainInfo} thePracExpInfo={displayPracExpInfo} />
       </main>

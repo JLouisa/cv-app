@@ -11,8 +11,8 @@ function InfoSection({
   onMainEducation,
   onEditMainEducation,
   onMainPracExp,
-  onAddPracExpInfo,
-  onEditPracExp,
+  onEditMainPracExp,
+  // onEditPracExp,
 }) {
   const [isActive, setIsActive] = useState(false);
 
@@ -25,8 +25,7 @@ function InfoSection({
       <PracticalExperience
         theMain={theMain}
         onMainPracExp={onMainPracExp}
-        onAddPracExpInfo={onAddPracExpInfo}
-        onEditPracExp={onEditPracExp}
+        onEditMainPracExp={onEditMainPracExp}
         setIsActive={setIsActive}
         isActive={isActive}
       />
@@ -41,10 +40,8 @@ InfoSection.propTypes = {
   onMainEducation: PropTypes.func,
   onEditMainEducation: PropTypes.func,
   onMainPracExp: PropTypes.func,
-  onAddEducationInfo: PropTypes.func,
-  onAddPracExpInfo: PropTypes.func,
+  onEditMainPracExp: PropTypes.func,
   onEditPracExp: PropTypes.func,
-  onEditEducationInfo: PropTypes.func,
 };
 
 export default InfoSection;

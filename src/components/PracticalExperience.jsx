@@ -17,7 +17,8 @@ class NewPracExp {
       (this.id = uuidv4());
   }
 }
-function PracticalExperience({ theMain, onMainPracExp, onEditPracExp, setIsActive }) {
+
+function PracticalExperience({ theMain, onMainPracExp, onEditMainPracExp, setIsActive }) {
   const [work, setWork] = useState([]);
 
   const [show, setShow] = useState(false);
@@ -29,6 +30,38 @@ function PracticalExperience({ theMain, onMainPracExp, onEditPracExp, setIsActiv
   const onHandlerBtn = () => {
     setShowBtn(!showBtn);
   };
+
+  function onEditPracExp(item, newItem) {
+    const foundIndex = theMain.main.pracExp.findIndex((x) => x.id === item.id);
+    const newArr = [...theMain.main.pracExp];
+    // console.log("newArr in onEditPracExp");
+    // console.log(newArr);
+
+    if (newItem.yourFunction !== "") {
+      newArr[foundIndex].yourFunction = newItem.yourFunction;
+    }
+    if (newItem.yourEmployer !== "") {
+      newArr[foundIndex].yourEmployer = newItem.yourEmployer;
+    }
+    if (newItem.yourLocation !== "") {
+      newArr[foundIndex].yourLocation = newItem.yourLocation;
+    }
+    if (newItem.yourStartDate !== "") {
+      newArr[foundIndex].yourStartDate = newItem.yourStartDate;
+    }
+    if (newItem.yourEndDate !== "") {
+      newArr[foundIndex].yourEndDate = newItem.yourEndDate;
+    }
+    if (newItem.yourDescription !== "") {
+      newArr[foundIndex].yourDescription = newItem.yourDescription;
+    }
+    if (newItem.selected !== "") {
+      newArr[foundIndex].selected = newItem.selected;
+    }
+    console.log(theMain.main.pracExp[foundIndex]);
+    console.log(newArr[foundIndex]);
+    onEditMainPracExp(theMain.main.pracExp[foundIndex], newArr[foundIndex]);
+  }
 
   return (
     <>
@@ -51,7 +84,9 @@ function PracticalExperience({ theMain, onMainPracExp, onEditPracExp, setIsActiv
                 {item.yourFunction}
                 {item.selected && (
                   <FormEditPracExp
+                    // theMain={theMain}
                     onEditPracExp={onEditPracExp}
+                    // editMainPracExp={editMainPracExp}
                     item={item}
                     setIsActive={setIsActive}
                     onHandler={onHandler}
@@ -85,7 +120,7 @@ function PracticalExperience({ theMain, onMainPracExp, onEditPracExp, setIsActiv
 PracticalExperience.propTypes = {
   theMain: PropTypes.object,
   onMainPracExp: PropTypes.func,
-  // onAddPracExpInfo: PropTypes.func,
+  editMainPracExp: PropTypes.func,
   onEditPracExp: PropTypes.func,
   setIsActive: PropTypes.func,
 };
