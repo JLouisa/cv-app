@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 import Button from "./Button.jsx";
 import { EducationList } from "./EducationList.jsx";
 
-function EducationInfo({ onAddEducationInfo, onEditEducationInfo }) {
+function EducationInfo({ theMain, onMainEducation, onEditMainEducation, onEditEducationInfo }) {
   const [show, setShow] = useState(false);
   const [isActive, setIsActive] = useState(false);
 
@@ -25,19 +25,23 @@ function EducationInfo({ onAddEducationInfo, onEditEducationInfo }) {
   }
 
   const onSumit = () => {
-    // e.preventDefault();
-
     const newItem = new NewEdu(titleStudy, schoolName, date);
     setEduList([...eduList, newItem]);
-    onAddEducationInfo(newItem);
+    onMainEducation(newItem); /* <--------------------*/
     setSchoolName("");
     setTitleStudy("");
     setDate("");
   };
 
+  // const editEduList = (item, title, school, date) => {
+  //   const newItem = new NewEdu(title, school, date);
+  //   newItem.id = item.id;
+  //   onEditMainEducation(item, newItem);
+  // };
+
   const editEduList = (item, title, school, date) => {
-    const foundIndex = eduList.findIndex((x) => x.id === item.id);
-    const newArr = [...eduList];
+    const foundIndex = theMain.main.education.findIndex((x) => x.id === item.id);
+    const newArr = [...theMain.main.education];
     if (title !== "") {
       newArr[foundIndex].title = title;
     }
@@ -49,6 +53,7 @@ function EducationInfo({ onAddEducationInfo, onEditEducationInfo }) {
     }
     setEduList(newArr);
     onEditEducationInfo(newArr);
+    onEditMainEducation(theMain.main.education[foundIndex], newArr[foundIndex]);
   };
 
   return (
@@ -61,8 +66,8 @@ function EducationInfo({ onAddEducationInfo, onEditEducationInfo }) {
         <>
           <div>
             <EducationList
-              eduList={eduList}
-              setEduList={setEduList}
+              theMain={theMain}
+              onEditMainEducation={onEditMainEducation}
               editEduList={editEduList}
               setIsActive={setIsActive}
             />
@@ -135,6 +140,9 @@ function EducationInfo({ onAddEducationInfo, onEditEducationInfo }) {
 }
 
 EducationInfo.propTypes = {
+  theMain: PropTypes.object,
+  onMainEducation: PropTypes.func,
+  onEditMainEducation: PropTypes.func,
   onAddEducationInfo: PropTypes.func,
   onEditEducationInfo: PropTypes.func,
 };

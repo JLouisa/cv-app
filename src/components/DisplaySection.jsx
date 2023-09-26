@@ -1,10 +1,7 @@
 // import { useState } from "react";
 import PropTypes from "prop-types";
 
-function DisplaySection({ theMain, theEducationInfo, thePracExpInfo }) {
-  console.log("Display Personalia");
-  console.log(theMain);
-  console.log(theMain.main.personalia);
+function DisplaySection({ theMain, thePracExpInfo }) {
   return (
     <section>
       <div className="displayPersonalia">
@@ -19,7 +16,7 @@ function DisplaySection({ theMain, theEducationInfo, thePracExpInfo }) {
       <hr></hr>
       <div className="displayEducation">
         <h2>Education Information</h2>
-        {theEducationInfo.map((edu) => {
+        {theMain.main.education.map((edu) => {
           return (
             <div key={edu.id}>
               <p className="eduTitle">
@@ -58,7 +55,7 @@ DisplaySection.propTypes = {
   theMain: PropTypes.object,
   // thePersonaliaInfo: PropTypes.array,
   // thePersnInfo: PropTypes.array,
-  theEducationInfo: PropTypes.array,
+  // theEducationInfo: PropTypes.array,
   thePracExpInfo: PropTypes.array,
 };
 

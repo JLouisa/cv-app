@@ -8,7 +8,7 @@ function App() {
   //! The Main Object
   const mainObj = {
     side: {},
-    main: { personalia: {}, education: {}, pracExp: {}, extra: {} },
+    main: { personalia: {}, education: [], pracExp: [], extra: [] },
   };
 
   const [mainInfo, setMain] = useState(mainObj);
@@ -18,9 +18,9 @@ function App() {
 
   //! Display Education
   const [displayEducationInfo, setDisplayEducationInfo] = useState([]);
-  function addEducationInfo(info) {
-    setDisplayEducationInfo([...displayEducationInfo, /*{ id: uuidv4(), info }*/ info]);
-  }
+  // function addEducationInfo(info) {
+  //   setDisplayEducationInfo([...displayEducationInfo, /*{ id: uuidv4(), info }*/ info]);
+  // }
   function editEducationInfo(info) {
     setDisplayEducationInfo(info);
   }
@@ -70,6 +70,20 @@ function App() {
     setMain(newObj);
   };
 
+  //! Add to or Edit Main Object for Education
+  const mainEducation = (edu) => {
+    const newObj = Object.assign({}, mainInfo);
+    newObj.main.education = [...newObj.main.education, edu];
+    setMain(newObj);
+  };
+
+  const editMainEducation = (item, newItem) => {
+    const newObj = Object.assign({}, mainInfo);
+    const foundIndex = newObj.main.education.findIndex((x) => x.id === item.id);
+    newObj.main.education[foundIndex] = { ...newItem };
+    setMain(newObj);
+  };
+
   return (
     <>
       <header>
@@ -79,7 +93,8 @@ function App() {
         <InfoSection
           theMain={mainInfo}
           onMainPersonalia={mainPersonalia}
-          onAddEducationInfo={addEducationInfo}
+          onMainEducation={mainEducation}
+          onEditMainEducation={editMainEducation}
           onAddPracExpInfo={addPracExpInfo}
           onEditPracExp={editPracExp}
           onEditEducationInfo={editEducationInfo}
@@ -94,4 +109,4 @@ function App() {
   );
 }
 
-export default App;
+export { App };

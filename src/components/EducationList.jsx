@@ -4,17 +4,17 @@ import PropTypes from "prop-types";
 // import Button from "./Button.jsx";
 import { FormEditEducation } from "./FormEditEducation.jsx";
 
-function EducationList({ eduList, setEduList, editEduList, setIsActive }) {
+function EducationList({ theMain, onEditMainEducation, editEduList, setIsActive }) {
   const changeSelected = (item) => {
-    const ind = eduList.indexOf(item);
-    const newList = [...eduList];
-    newList[ind].selected = !newList[ind].selected;
-    setEduList(newList);
+    const ind = theMain.main.education.findIndex((x) => x.id === item.id);
+    const newList = { ...theMain.main.education[ind] };
+    newList.selected = !newList.selected;
+    onEditMainEducation(theMain.main.education[ind], newList);
   };
 
   return (
     <>
-      {eduList.map((item) => {
+      {theMain.main.education.map((item) => {
         return (
           <div
             className="workTitle"
@@ -40,6 +40,8 @@ function EducationList({ eduList, setEduList, editEduList, setIsActive }) {
 }
 
 EducationList.propTypes = {
+  theMain: PropTypes.object,
+  onEditMainEducation: PropTypes.func,
   onAddPersonInfo: PropTypes.func,
   eduList: PropTypes.array,
   setEduList: PropTypes.func,

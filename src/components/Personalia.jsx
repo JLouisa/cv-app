@@ -2,10 +2,8 @@ import PropTypes from "prop-types";
 import { useState } from "react";
 import Button from "./Button.jsx";
 
-function Personalia({ theMain, onMainPersonalia }) {
+function Personalia({ onMainPersonalia }) {
   const [show, setShow] = useState(false);
-
-  // const [personInfo, setPersonInfo] = useState([]);
 
   class Personalia {
     constructor(firstName, lastName, email, phoneNum) {
@@ -27,7 +25,6 @@ function Personalia({ theMain, onMainPersonalia }) {
 
   function personaliaSubmit(e) {
     e.preventDefault();
-    console.log(e.target.value);
   }
 
   function onSubmit(e) {
@@ -113,7 +110,6 @@ function Personalia({ theMain, onMainPersonalia }) {
 }
 
 Personalia.propTypes = {
-  theMain: PropTypes.object,
   onMainPersonalia: PropTypes.func,
 };
 
