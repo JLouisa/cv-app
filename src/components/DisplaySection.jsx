@@ -1,16 +1,17 @@
 // import { useState } from "react";
 import PropTypes from "prop-types";
 
-function DisplaySection({ thePersnInfo, theEducationInfo, thePracExpInfo }) {
+function DisplaySection({ thePersonaliaInfo, theEducationInfo, thePracExpInfo }) {
   return (
     <section>
       <div className="displayPersonalia">
         <h1>Personalia Information</h1>
-        <p>{thePersnInfo[0]}</p>
-        <p>{thePersnInfo[1]}</p>
-        <p>{thePersnInfo[2]}</p>
-        <p>{thePersnInfo[3]}</p>
-        {thePersnInfo[4]}
+        <div>
+          <p>{thePersonaliaInfo.firstName}</p>
+          <p>{thePersonaliaInfo.lastName}</p>
+          <p>{thePersonaliaInfo.email}</p>
+          <p>{thePersonaliaInfo.phoneNum}</p>
+        </div>
       </div>
       <hr></hr>
       <div className="displayEducation">
@@ -51,6 +52,7 @@ function DisplaySection({ thePersnInfo, theEducationInfo, thePracExpInfo }) {
 }
 
 DisplaySection.propTypes = {
+  thePersonaliaInfo: PropTypes.array,
   thePersnInfo: PropTypes.array,
   theEducationInfo: PropTypes.array,
   thePracExpInfo: PropTypes.array,

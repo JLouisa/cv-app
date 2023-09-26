@@ -2,8 +2,19 @@ import PropTypes from "prop-types";
 import { useState } from "react";
 import Button from "./Button.jsx";
 
-function Personalia({ onAddPersonInfo }) {
+function Personalia({ onAddPersonaliaInfo }) {
   const [show, setShow] = useState(false);
+
+  // const [personInfo, setPersonInfo] = useState([]);
+
+  class Personalia {
+    constructor(firstName, lastName, email, phoneNum) {
+      this.firstName = firstName;
+      this.lastName = lastName;
+      this.email = email;
+      this.phoneNum = phoneNum;
+    }
+  }
 
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -21,11 +32,8 @@ function Personalia({ onAddPersonInfo }) {
 
   function onSubmit(e) {
     e.preventDefault();
-    if (!firstName) {
-      alert("Please fill in your name");
-      return;
-    }
-    onAddPersonInfo({ firstName, lastName, email, phoneNum });
+    const newPersonInfo = new Personalia(firstName, lastName, email, phoneNum);
+    onAddPersonaliaInfo(newPersonInfo);
   }
 
   return (
@@ -105,7 +113,7 @@ function Personalia({ onAddPersonInfo }) {
 }
 
 Personalia.propTypes = {
-  onAddPersonInfo: PropTypes.func,
+  onAddPersonaliaInfo: PropTypes.func,
 };
 
 export default Personalia;

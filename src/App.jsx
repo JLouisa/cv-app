@@ -5,19 +5,18 @@ import { DisplaySection } from "./components/DisplaySection.jsx";
 import "./styles/App.css";
 
 function App() {
+  //! The Main Object
+  const mainObj = {
+    personalia: {},
+    education: {},
+    pracExp: {},
+    extra: {},
+  };
+
+  const [main, setMain] = useState(mainObj);
+
   //! Display Personalia
-  const [displayFirstName, setDisplayFirstName] = useState("No info provided");
-  const [displayLastName, setDisplayLastName] = useState("");
-  const [displayEmail, setDisplayEmail] = useState("");
-  const [displayPhoneNum, setDisplayPhoneNum] = useState("");
-  const [displaySeparator, setDisplaySeparator] = useState(false);
-  function addPersonInfo(info) {
-    setDisplayFirstName(info.firstName);
-    setDisplayLastName(info.lastName);
-    setDisplayEmail(info.email);
-    setDisplayPhoneNum(info.phoneNum);
-    setDisplaySeparator(true);
-  }
+  const [displayPersonalia, setDisplayPersonalia] = useState([]);
 
   //! Display Education
   const [displayEducationInfo, setDisplayEducationInfo] = useState([]);
@@ -73,14 +72,14 @@ function App() {
       </header>
       <main>
         <InfoSection
-          onAddPersonInfo={addPersonInfo}
+          onAddPersonaliaInfo={setDisplayPersonalia}
           onAddEducationInfo={addEducationInfo}
           onAddPracExpInfo={addPracExpInfo}
           onEditPracExp={editPracExp}
           onEditEducationInfo={editEducationInfo}
         />
         <DisplaySection
-          thePersnInfo={[displayFirstName, displayLastName, displayEmail, displayPhoneNum, displaySeparator]}
+          thePersonaliaInfo={displayPersonalia}
           theEducationInfo={displayEducationInfo}
           thePracExpInfo={displayPracExpInfo}
         />
