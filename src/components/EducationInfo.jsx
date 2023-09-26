@@ -6,6 +6,7 @@ import { EducationList } from "./EducationList.jsx";
 
 function EducationInfo({ onAddEducationInfo, onEditEducationInfo }) {
   const [show, setShow] = useState(false);
+  const [isActive, setIsActive] = useState(false);
 
   const [eduList, setEduList] = useState([]);
 
@@ -23,8 +24,8 @@ function EducationInfo({ onAddEducationInfo, onEditEducationInfo }) {
     }
   }
 
-  const onSumit = (e) => {
-    e.preventDefault();
+  const onSumit = () => {
+    // e.preventDefault();
 
     const newItem = new NewEdu(titleStudy, schoolName, date);
     setEduList([...eduList, newItem]);
@@ -59,55 +60,74 @@ function EducationInfo({ onAddEducationInfo, onEditEducationInfo }) {
       {show && (
         <>
           <div>
-            <EducationList eduList={eduList} setEduList={setEduList} editEduList={editEduList} />
+            <EducationList
+              eduList={eduList}
+              setEduList={setEduList}
+              editEduList={editEduList}
+              setIsActive={setIsActive}
+            />
           </div>
-          <form onSubmit={onSumit}>
-            <label htmlFor="schoolName">
-              {"What is your school Name?"}
-              <input
-                type="text"
-                placeholder="School Name"
-                id="schoolName"
-                autoComplete="off"
-                value={schoolName}
-                onChange={(e) => {
-                  setSchoolName(e.target.value);
-                }}
-              />
-            </label>
-            <div>
-              <label htmlFor="titleStudy">
-                {"What is your Study Title?"}
+          {isActive && (
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                onSumit();
+                setIsActive(false);
+              }}
+            >
+              <label htmlFor="schoolName">
+                {"What is your school Name?"}
                 <input
                   type="text"
-                  placeholder="Study Title"
-                  id="titleStudy"
+                  placeholder="School Name"
+                  id="schoolName"
                   autoComplete="off"
-                  value={titleStudy}
+                  value={schoolName}
                   onChange={(e) => {
-                    setTitleStudy(e.target.value);
+                    setSchoolName(e.target.value);
                   }}
                 />
               </label>
-            </div>
-            <div>
-              <label htmlFor="date">
-                {"Date of Study"}
-                <input
-                  type="month"
-                  id="date"
-                  autoComplete="off"
-                  value={date}
-                  onChange={(e) => {
-                    setDate(e.target.value);
-                  }}
-                />
-              </label>
-            </div>
-            <div>
-              <input type="submit" value={"Add"} />
-            </div>
-          </form>
+              <div>
+                <label htmlFor="titleStudy">
+                  {"What is your Study Title?"}
+                  <input
+                    type="text"
+                    placeholder="Study Title"
+                    id="titleStudy"
+                    autoComplete="off"
+                    value={titleStudy}
+                    onChange={(e) => {
+                      setTitleStudy(e.target.value);
+                    }}
+                  />
+                </label>
+              </div>
+              <div>
+                <label htmlFor="date">
+                  {"Date of Study"}
+                  <input
+                    type="month"
+                    id="date"
+                    autoComplete="off"
+                    value={date}
+                    onChange={(e) => {
+                      setDate(e.target.value);
+                    }}
+                  />
+                </label>
+              </div>
+              <div>
+                <input type="submit" value={"Add"} />
+              </div>
+            </form>
+          )}
+          <Button
+            text={isActive ? "Close" : "Add Education Info"}
+            onClick={() => {
+              setIsActive(!isActive);
+            }}
+          />
         </>
       )}
     </>

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 // import { v4 as uuidv4 } from "uuid";
 // import Button from "./Button.jsx";
 
-function FormEditEducation({ item, editEduList }) {
+function FormEditEducation({ item, editEduList, changeSelected, setIsActive }) {
   let schoolValue = "";
   let titleValue = "";
   let dateValue = "";
@@ -14,6 +14,8 @@ function FormEditEducation({ item, editEduList }) {
         onSubmit={(e) => {
           e.preventDefault();
           editEduList(item, titleValue, schoolValue, dateValue);
+          changeSelected(item);
+          setIsActive(false);
         }}
       >
         <label htmlFor="schoolName">
@@ -70,6 +72,8 @@ FormEditEducation.propTypes = {
   onAddEducationInfo: PropTypes.func,
   item: PropTypes.object,
   editEduList: PropTypes.func,
+  changeSelected: PropTypes.func,
+  setIsActive: PropTypes.func,
 };
 
 export { FormEditEducation };
