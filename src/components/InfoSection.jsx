@@ -2,7 +2,7 @@
 import PropTypes from "prop-types";
 import Personalia from "./Personalia.jsx";
 import EducationInfo from "./EducationInfo.jsx";
-import PracticalExperience from "./PracticalExperience.jsx";
+import { PracticalExperience } from "./PracticalExperience.jsx";
 
 function InfoSection({ onAddPersonInfo, onAddEducationInfo, onAddPracExpInfo, onEditPracExp }) {
   return (
