@@ -39,7 +39,6 @@ InfoSection.propTypes = {
   onEditMainEducation: PropTypes.func,
   onMainPracExp: PropTypes.func,
   onEditMainPracExp: PropTypes.func,
-  onEditPracExp: PropTypes.func,
 };
 
 export default InfoSection;

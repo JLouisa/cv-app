@@ -1,16 +1,36 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 import InfoSection from "./components/InfoSection.jsx";
 import { DisplaySection } from "./components/DisplaySection.jsx";
+// import LocalStorageApp from "./components/LocalStorageApp.jsx";
 import "./styles/App.css";
 
 function App() {
   //! The Main Object
   const mainObj = {
-    side: {},
+    side: { extra: [] },
     main: { personalia: {}, education: [], pracExp: [], extra: [] },
   };
 
   const [mainInfo, setMain] = useState(mainObj);
+
+  // //! Load JSON
+  useEffect(() => {
+    const loadMainCv = localStorage.getItem("mainCV");
+    console.log("loadMainCv");
+    console.log(loadMainCv);
+    if (loadMainCv !== null) setMain(JSON.parse(loadMainCv));
+  }, []);
+
+  //! Save JSON
+  const saving = (obj) => {
+    const mainCV = JSON.stringify(obj);
+    localStorage.setItem("mainCV", mainCV);
+  };
+
+  // useEffect(() => {
+  //   localStorage.setItem("mainCV", JSON.stringify(mainInfo));
+  // }, [mainInfo]);
 
   //! Display Work Experience
   const [displayPracExpInfo, setdisplayPracExpInfo] = useState([]);
@@ -23,6 +43,7 @@ function App() {
     const newObj = Object.assign({}, mainInfo);
     newObj.main.personalia = { ...person };
     setMain(newObj);
+    saving(newObj);
   };
 
   //! Add to or Edit Main Object for Education
@@ -30,12 +51,14 @@ function App() {
     const newObj = Object.assign({}, mainInfo);
     newObj.main.education = [...newObj.main.education, edu];
     setMain(newObj);
+    saving(newObj);
   };
   const editMainEducation = (item, newItem) => {
     const newObj = Object.assign({}, mainInfo);
     const foundIndex = newObj.main.education.findIndex((x) => x.id === item.id);
     newObj.main.education[foundIndex] = { ...newItem };
     setMain(newObj);
+    saving(newObj);
   };
 
   //! Add to or Edit Main Object for Practical Experience
@@ -43,12 +66,14 @@ function App() {
     const newObj = Object.assign({}, mainInfo);
     newObj.main.pracExp = [...newObj.main.pracExp, exp];
     setMain(newObj);
+    saving(newObj);
   };
   const editMainPracExp = (item, newItem) => {
     const newObj = Object.assign({}, mainInfo);
     const foundIndex = newObj.main.pracExp.findIndex((x) => x.id === item.id);
     newObj.main.pracExp[foundIndex] = { ...newItem };
     setMain(newObj);
+    saving(newObj);
   };
 
   return (
@@ -71,5 +96,9 @@ function App() {
     </>
   );
 }
+
+App.propTypes = {
+  theJsonCV: PropTypes.object,
+};
 
 export { App };
