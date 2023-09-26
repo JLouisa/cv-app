@@ -2,7 +2,6 @@ import PropTypes from "prop-types";
 import Button from "./Button.jsx";
 import { useState } from "react";
 import { NewPracExp } from "./PracticalExperience.jsx";
-// import { v4 as uuidv4 } from "uuid";
 
 function FormEditPracExp({ onEditPracExp, item, setIsActive }) {
   const [yourFunction, setYourFunction] = useState("");
@@ -11,11 +10,6 @@ function FormEditPracExp({ onEditPracExp, item, setIsActive }) {
   const [yourStartDate, setYourStartDate] = useState("");
   const [yourEndDate, setYourEndDate] = useState("");
   const [yourDescription, setYourDescription] = useState("");
-
-  // const [isActive, setIsActive] = useState(false);
-  // const editShowExp = () => {
-  //   setIsActive(!isActive);
-  // };
 
   const onEdit = (item) => {
     const newItem = new NewPracExp(
@@ -27,7 +21,6 @@ function FormEditPracExp({ onEditPracExp, item, setIsActive }) {
       yourDescription
     );
     onEditPracExp(item, newItem);
-    // resetForms();
     setIsActive(false);
   };
 

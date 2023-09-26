@@ -33,22 +33,6 @@ function PracticalExperience({ onAddPracExpInfo, onEditPracExp }) {
     setShowBtn(!showBtn);
   };
 
-  // const [yourFunction, setYourFunction] = useState("");
-  // const [yourEmployer, setYourEmployer] = useState("");
-  // const [yourLocation, setYourLocation] = useState("");
-  // const [yourStartDate, setYourStartDate] = useState("");
-  // const [yourEndDate, setYourEndDate] = useState("");
-  // const [yourDescription, setYourDescription] = useState("");
-
-  // function resetForms() {
-  //   setYourFunction("");
-  //   setYourEmployer("");
-  //   setYourLocation("");
-  //   setYourStartDate("");
-  //   setYourEndDate("");
-  //   setYourDescription("");
-  // }
-
   return (
     <>
       <div className="practicalExperience">
@@ -59,13 +43,12 @@ function PracticalExperience({ onAddPracExpInfo, onEditPracExp }) {
         <div>
           <div>
             {work.map((item) => (
-              <p
+              <div
                 key={item.id}
                 className="workTitle"
                 onDoubleClick={() => {
                   console.log(item);
                   console.log(item.id);
-                  // setIsActive(true);
                   editShowExp();
                 }}
               >
@@ -78,7 +61,7 @@ function PracticalExperience({ onAddPracExpInfo, onEditPracExp }) {
                     onHandler={onHandler}
                   />
                 )}
-              </p>
+              </div>
             ))}
           </div>
           <div>
