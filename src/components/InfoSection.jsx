@@ -10,9 +10,9 @@ function InfoSection({
   onMainPersonalia,
   onMainEducation,
   onEditMainEducation,
+  onMainPracExp,
   onAddPracExpInfo,
   onEditPracExp,
-  // onEditEducationInfo,
 }) {
   const [isActive, setIsActive] = useState(false);
 
@@ -20,14 +20,11 @@ function InfoSection({
     <section className="infoSection">
       <Personalia onMainPersonalia={onMainPersonalia} />
       <hr></hr>
-      <EducationInfo
-        theMain={theMain}
-        onMainEducation={onMainEducation}
-        onEditMainEducation={onEditMainEducation}
-        // onEditEducationInfo={onEditEducationInfo}
-      />
+      <EducationInfo theMain={theMain} onMainEducation={onMainEducation} onEditMainEducation={onEditMainEducation} />
       <hr></hr>
       <PracticalExperience
+        theMain={theMain}
+        onMainPracExp={onMainPracExp}
         onAddPracExpInfo={onAddPracExpInfo}
         onEditPracExp={onEditPracExp}
         setIsActive={setIsActive}
@@ -43,6 +40,7 @@ InfoSection.propTypes = {
   onMainPersonalia: PropTypes.func,
   onMainEducation: PropTypes.func,
   onEditMainEducation: PropTypes.func,
+  onMainPracExp: PropTypes.func,
   onAddEducationInfo: PropTypes.func,
   onAddPracExpInfo: PropTypes.func,
   onEditPracExp: PropTypes.func,

@@ -70,11 +70,23 @@ function App() {
     newObj.main.education = [...newObj.main.education, edu];
     setMain(newObj);
   };
-
   const editMainEducation = (item, newItem) => {
     const newObj = Object.assign({}, mainInfo);
     const foundIndex = newObj.main.education.findIndex((x) => x.id === item.id);
     newObj.main.education[foundIndex] = { ...newItem };
+    setMain(newObj);
+  };
+
+  //! Add to or Edit Main Object for Practical Experience
+  const mainPracExp = (exp) => {
+    const newObj = Object.assign({}, mainInfo);
+    newObj.main.pracExp = [...newObj.main.pracExp, exp];
+    setMain(newObj);
+  };
+  const editMainPracExp = (item, newItem) => {
+    const newObj = Object.assign({}, mainInfo);
+    const foundIndex = newObj.main.pracExp.findIndex((x) => x.id === item.id);
+    newObj.main.pracExp[foundIndex] = { ...newItem };
     setMain(newObj);
   };
 
@@ -89,6 +101,7 @@ function App() {
           onMainPersonalia={mainPersonalia}
           onMainEducation={mainEducation}
           onEditMainEducation={editMainEducation}
+          onMainPracExp={mainPracExp}
           onAddPracExpInfo={addPracExpInfo}
           onEditPracExp={editPracExp}
         />

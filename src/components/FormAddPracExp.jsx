@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { useState } from "react";
 import { NewPracExp } from "./PracticalExperience.jsx";
 
-function FormAddPracExp({ onAddPracExpInfo, work, setWork, onHandlerBtn }) {
+function FormAddPracExp({ onMainPracExp, work, setWork, onHandlerBtn }) {
   const [yourFunction, setYourFunction] = useState("");
   const [yourEmployer, setYourEmployer] = useState("");
   const [yourLocation, setYourLocation] = useState("");
@@ -20,7 +20,8 @@ function FormAddPracExp({ onAddPracExpInfo, work, setWork, onHandlerBtn }) {
       yourDescription
     );
 
-    onAddPracExpInfo(newItem);
+    onMainPracExp(newItem);
+
     setWork([...work, newItem]);
     onHandlerBtn();
   };
@@ -127,7 +128,7 @@ function FormAddPracExp({ onAddPracExpInfo, work, setWork, onHandlerBtn }) {
 }
 
 FormAddPracExp.propTypes = {
-  onAddPracExpInfo: PropTypes.func,
+  onMainPracExp: PropTypes.func,
   item: PropTypes.array,
   setWork: PropTypes.func,
   onHandlerBtn: PropTypes.func,

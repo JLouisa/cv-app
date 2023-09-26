@@ -17,7 +17,7 @@ class NewPracExp {
       (this.id = uuidv4());
   }
 }
-function PracticalExperience({ onAddPracExpInfo, onEditPracExp, setIsActive }) {
+function PracticalExperience({ theMain, onMainPracExp, onEditPracExp, setIsActive }) {
   const [work, setWork] = useState([]);
 
   const [show, setShow] = useState(false);
@@ -39,7 +39,7 @@ function PracticalExperience({ onAddPracExpInfo, onEditPracExp, setIsActive }) {
       {show && (
         <div>
           <div>
-            {work.map((item) => (
+            {theMain.main.pracExp.map((item) => (
               <div
                 key={item.id}
                 className="workTitle"
@@ -64,7 +64,8 @@ function PracticalExperience({ onAddPracExpInfo, onEditPracExp, setIsActive }) {
             {showBtn && (
               <>
                 <FormAddPracExp
-                  onAddPracExpInfo={onAddPracExpInfo}
+                  onMainPracExp={onMainPracExp}
+                  // onAddPracExpInfo={onAddPracExpInfo}
                   work={work}
                   setWork={setWork}
                   onHandlerBtn={onHandlerBtn}
@@ -82,7 +83,9 @@ function PracticalExperience({ onAddPracExpInfo, onEditPracExp, setIsActive }) {
 }
 
 PracticalExperience.propTypes = {
-  onAddPracExpInfo: PropTypes.func,
+  theMain: PropTypes.object,
+  onMainPracExp: PropTypes.func,
+  // onAddPracExpInfo: PropTypes.func,
   onEditPracExp: PropTypes.func,
   setIsActive: PropTypes.func,
 };
