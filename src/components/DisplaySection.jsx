@@ -18,9 +18,10 @@ function DisplaySection({ thePersnInfo, theEducationInfo, thePracExpInfo }) {
         {theEducationInfo.map((edu) => {
           return (
             <div key={edu.id}>
-              <p className="eduTitle">{edu.title}</p>
+              <p className="eduTitle">
+                <span>{edu.title}</span> <span>{edu.date}</span>
+              </p>
               <p>{edu.school}</p>
-              <p>{edu.date}</p>
             </div>
           );
         })}

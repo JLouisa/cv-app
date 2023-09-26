@@ -24,6 +24,9 @@ function App() {
   function addEducationInfo(info) {
     setDisplayEducationInfo([...displayEducationInfo, /*{ id: uuidv4(), info }*/ info]);
   }
+  function editEducationInfo(info) {
+    setDisplayEducationInfo(info);
+  }
 
   //! Display Work Experience
   const [displayPracExpInfo, setdisplayPracExpInfo] = useState([]);
@@ -37,7 +40,6 @@ function App() {
       if (exp.id === item.id) {
         const ind = displayPracExpInfo.indexOf(exp);
         const newArr = [...displayPracExpInfo];
-        // newArr.splice(ind, 1, newItem);
         if (newItem.yourFunction !== "") {
           newArr[ind].yourFunction = newItem.yourFunction;
         }
@@ -75,6 +77,7 @@ function App() {
           onAddEducationInfo={addEducationInfo}
           onAddPracExpInfo={addPracExpInfo}
           onEditPracExp={editPracExp}
+          onEditEducationInfo={editEducationInfo}
         />
         <DisplaySection
           thePersnInfo={[displayFirstName, displayLastName, displayEmail, displayPhoneNum, displaySeparator]}
