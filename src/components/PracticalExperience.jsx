@@ -17,7 +17,7 @@ class NewPracExp {
       (this.id = uuidv4());
   }
 }
-function PracticalExperience({ onAddPracExpInfo, onEditPracExp, setIsActive, isActive }) {
+function PracticalExperience({ onAddPracExpInfo, onEditPracExp, setIsActive }) {
   const [work, setWork] = useState([]);
 
   const [show, setShow] = useState(false);
@@ -85,7 +85,6 @@ PracticalExperience.propTypes = {
   onAddPracExpInfo: PropTypes.func,
   onEditPracExp: PropTypes.func,
   setIsActive: PropTypes.func,
-  isActive: PropTypes.bool,
 };
 
 export { PracticalExperience, NewPracExp };
