@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
-import Button from "./Button.jsx";
 import { useState } from "react";
+import { SubmitBtn } from "./SubmitBtn.jsx";
 import { NewPracExp } from "./PracticalExperience.jsx";
 import DeleteBtn from "./DeleteBtn.jsx";
 
@@ -101,14 +101,8 @@ function FormEditPracExp({ onEditPracExp, item, setIsActive }) {
         />
       </label>
       <div className="deleteDiv">
-        <div>
-          <input type="submit" value={"Edit"} />
-          <Button
-            text="Cancel"
-            onClick={() => {
-              setIsActive(false);
-            }}
-          />
+        <div className="">
+          <SubmitBtn typeBtn="submit" classNameBtn={"btn"} text={"Edit"} />
         </div>
         <DeleteBtn item={item} onEditPracExp={onEditPracExp} />
       </div>

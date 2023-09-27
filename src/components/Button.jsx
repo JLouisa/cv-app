@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 
 function Button({
+  typeBtn = "button",
   classNameBtn = "btn",
   color = "green",
   text = "LeButton",
@@ -9,7 +10,7 @@ function Button({
   },
 }) {
   return (
-    <button type="button" className={classNameBtn} style={{ backgroundColor: color }} onClick={onClick}>
+    <button type={typeBtn} className={classNameBtn} style={{ backgroundColor: color }} onClick={onClick}>
       {text}
     </button>
   );
@@ -20,6 +21,7 @@ Button.propTypes = {
   color: PropTypes.string,
   text: PropTypes.string,
   onClick: PropTypes.func,
+  typeBtn: PropTypes.string,
 };
 
 export default Button;

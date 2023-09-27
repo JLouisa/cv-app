@@ -4,6 +4,7 @@
   padding: 2rem;
   /* text-align: center; */
   --borderColor: #777;
+  --backgroundColor: white;
 }
 
 hr {
@@ -63,7 +64,8 @@ main > section {
   box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.153);
 }
 
-.downloadSection {
+.downloadSection,
+.eduBtnDiv {
   text-align: center;
   padding: 1em;
 }
@@ -88,6 +90,7 @@ footer {
   padding: 1em;
   background-color: #cfcfcf3a;
   border-radius: 5px;
+  margin: 1em 0;
 }
 
 /* -------------------------Education Display Section---------------------------- */
@@ -129,11 +132,6 @@ footer {
   justify-content: space-between;
 }
 
-.deleteImg {
-  width: 20px;
-  height: auto;
-}
-
 .links {
   display: flex;
   justify-content: center;
@@ -146,4 +144,9 @@ footer {
 .links img {
   width: 3rem;
   height: auto;
+}
+
+.deleteImg {
+  width: 20px;
+  height: 20px;
 }

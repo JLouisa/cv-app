@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
 import Button from "./Button.jsx";
+import { SubmitBtn } from "./SubmitBtn.jsx";
 
 function Personalia({ /*theMain,*/ onMainPersonalia }) {
   const [show, setShow] = useState(false);
@@ -27,8 +28,7 @@ function Personalia({ /*theMain,*/ onMainPersonalia }) {
     e.preventDefault();
   }
 
-  function onSubmit(e) {
-    e.preventDefault();
+  function onSubmit() {
     const newPersonInfo = new Personalia(firstName, lastName, email, phoneNum);
     onMainPersonalia(newPersonInfo);
   }
@@ -40,7 +40,13 @@ function Personalia({ /*theMain,*/ onMainPersonalia }) {
         <Button color={"green"} text={show ? "⌃" : "⌄"} onClick={onHandlerBtn} />
       </div>
       {show && (
-        <form onSubmit={onSubmit}>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            onHandlerBtn();
+            onSubmit();
+          }}
+        >
           <label htmlFor="fName">
             {"First Name "}
             <input
@@ -100,9 +106,7 @@ function Personalia({ /*theMain,*/ onMainPersonalia }) {
               />
             </label>
           </div>
-          <div>
-            <input type="submit" id="personaliaSubmit" value={"Add"} />
-          </div>
+          <SubmitBtn typeBtn="submit" classNameBtn={"btn"} text={"Add"} />
         </form>
       )}
     </>

@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { SubmitBtn } from "./SubmitBtn.jsx";
 import { useState } from "react";
 import { NewPracExp } from "./PracticalExperience.jsx";
 
@@ -120,9 +121,7 @@ function FormAddPracExp({ onMainPracExp, work, setWork, onHandlerBtn }) {
           }}
         />
       </div>
-      <div>
-        <input type="submit" value={"Add"} />
-      </div>
+      <SubmitBtn typeBtn="submit" classNameBtn={"btn"} text={"Add"} />
     </form>
   );
 }

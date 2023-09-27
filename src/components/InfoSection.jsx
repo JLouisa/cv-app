@@ -16,9 +16,6 @@ function InfoSection({
   const [isActive, setIsActive] = useState(false);
 
   const clickedFunc = (item, branch) => {
-    console.log(item.id);
-    console.log(item);
-    console.log(branch);
     const newItem = { ...item };
     newItem.selected = !newItem.selected;
 

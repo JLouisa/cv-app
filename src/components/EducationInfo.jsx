@@ -116,17 +116,19 @@ function EducationInfo({ theMain, onMainEducation, onEditMainEducation, setIsAct
                   />
                 </label>
               </div>
-              <div>
-                <input type="submit" value={"Add"} />
+              <div className="eduBtnDiv">
+                <input type="submit" value={"Add"} className="btn" />
               </div>
             </form>
           )}
-          <Button
-            text={isActive ? "Close" : "Add Education Info"}
-            onClick={() => {
-              setIsActive(!isActive);
-            }}
-          />
+          <div className="eduBtnDiv">
+            <Button
+              text={isActive ? "Close" : "Add Education Info"}
+              onClick={() => {
+                setIsActive(!isActive);
+              }}
+            />
+          </div>
         </>
       )}
     </>

@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { SubmitBtn } from "./SubmitBtn.jsx";
 import DeleteBtn from "./DeleteBtn.jsx";
 
 function FormEditEducation({ item, editEduList, changeSelected, setIsActive, onEditMainEducation }) {
@@ -59,7 +60,7 @@ function FormEditEducation({ item, editEduList, changeSelected, setIsActive, onE
           </label>
         </div>
         <div className="deleteDiv">
-          <input type="submit" value={"Edit"} />
+          <SubmitBtn typeBtn="submit" classNameBtn={"btn"} text={"Edit"} />
           <DeleteBtn item={item} onEditPracExp={onEditMainEducation} />
         </div>
       </form>
