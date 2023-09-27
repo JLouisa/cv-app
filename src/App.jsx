@@ -72,8 +72,7 @@ function App() {
   //! Delete module
   const deletePersonalia = () => {
     const newObj = Object.assign({}, mainInfo);
-    const list = [...newObj.main.education];
-    const newList = list.filter((nonDeleted) => {
+    const newList = newObj.main.education.filter((nonDeleted) => {
       nonDeleted.deleted !== true;
     });
     newObj.main.education = [...newList];
@@ -82,8 +81,7 @@ function App() {
   };
   const deleteEducation = () => {
     const newObj = Object.assign({}, mainInfo);
-    const list = [...mainInfo.main.pracExp];
-    const newList = list.filter((nonDeleted) => {
+    const newList = newObj.main.pracExp.filter((nonDeleted) => {
       nonDeleted.deleted !== true;
     });
     newObj.main.pracExp = [...newList];
@@ -92,8 +90,7 @@ function App() {
   };
   const deleteExtra = () => {
     const newObj = Object.assign({}, mainInfo);
-    const list = [...mainInfo.main.extra];
-    const newList = list.filter((nonDeleted) => {
+    const newList = newObj.main.extra.filter((nonDeleted) => {
       nonDeleted.deleted !== true;
     });
     newObj.main.extra = [...newList];
