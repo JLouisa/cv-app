@@ -1,13 +1,19 @@
 import deleteBtn from "../images/delete.svg";
 import PropTypes from "prop-types";
 
-function DeleteBtn({ item, setIsActive }) {
+function DeleteBtn({ item, onEditPracExp }) {
+  const deletedFunc = () => {
+    let newItem = { ...item };
+    newItem.deleted = true;
+    onEditPracExp(item, newItem);
+  };
   return (
     <button
+      type="button"
       className="deleteBtn"
       onClick={() => {
         item.deleted = !item.deleted;
-        setIsActive(item.selected);
+        deletedFunc();
       }}
     >
       <img src={deleteBtn} alt="Delete button" className="deleteImg" />
@@ -16,9 +22,8 @@ function DeleteBtn({ item, setIsActive }) {
 }
 
 DeleteBtn.propTypes = {
-  onclick: PropTypes.func,
   item: PropTypes.object,
-  setIsActive: PropTypes.func,
+  onEditPracExp: PropTypes.func,
 };
 
-export { DeleteBtn };
+export default DeleteBtn;

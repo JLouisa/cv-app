@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { EditBtn } from "./EditBtn.jsx";
+import EditBtn from "./EditBtn.jsx";
 import { FormEditEducation } from "./FormEditEducation.jsx";
 
 function EducationList({ theMain, onEditMainEducation, editEduList, setIsActive }) {

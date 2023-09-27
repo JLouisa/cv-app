@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { DeleteBtn } from "./DeleteBtn.jsx";
+import DeleteBtn from "./DeleteBtn.jsx";
 
 function FormEditEducation({ item, editEduList, changeSelected, setIsActive }) {
   let schoolValue = "";

@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import Button from "./Button.jsx";
 import { useState } from "react";
 import { NewPracExp } from "./PracticalExperience.jsx";
+import DeleteBtn from "./DeleteBtn.jsx";
 
 function FormEditPracExp({ onEditPracExp, item, setIsActive }) {
   const [yourFunction, setYourFunction] = useState("");
@@ -99,14 +100,17 @@ function FormEditPracExp({ onEditPracExp, item, setIsActive }) {
           }}
         />
       </label>
-      <div>
-        <input type="submit" value={"Edit"} />
-        <Button
-          text="Cancel"
-          onClick={() => {
-            setIsActive(false);
-          }}
-        />
+      <div className="deleteDiv">
+        <div>
+          <input type="submit" value={"Edit"} />
+          <Button
+            text="Cancel"
+            onClick={() => {
+              setIsActive(false);
+            }}
+          />
+        </div>
+        <DeleteBtn item={item} onEditPracExp={onEditPracExp} />
       </div>
     </form>
   );

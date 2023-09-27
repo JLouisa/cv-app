@@ -50,6 +50,8 @@ function App() {
     const newObj = Object.assign({}, mainInfo);
     const foundIndex = newObj.main.education.findIndex((x) => x.id === item.id);
     newObj.main.education[foundIndex] = { ...newItem };
+    const filteredList = newObj.main.education.filter((x) => x.deleted === false);
+    newObj.main.education = [...filteredList];
     setMain(newObj);
     saving(newObj);
   };
@@ -65,35 +67,8 @@ function App() {
     const newObj = Object.assign({}, mainInfo);
     const foundIndex = newObj.main.pracExp.findIndex((x) => x.id === item.id);
     newObj.main.pracExp[foundIndex] = { ...newItem };
-    setMain(newObj);
-    saving(newObj);
-  };
-
-  //! Delete module
-  const deletePersonalia = () => {
-    const newObj = Object.assign({}, mainInfo);
-    const newList = newObj.main.education.filter((nonDeleted) => {
-      nonDeleted.deleted !== true;
-    });
-    newObj.main.education = [...newList];
-    setMain(newObj);
-    saving(newObj);
-  };
-  const deleteEducation = () => {
-    const newObj = Object.assign({}, mainInfo);
-    const newList = newObj.main.pracExp.filter((nonDeleted) => {
-      nonDeleted.deleted !== true;
-    });
-    newObj.main.pracExp = [...newList];
-    setMain(newObj);
-    saving(newObj);
-  };
-  const deleteExtra = () => {
-    const newObj = Object.assign({}, mainInfo);
-    const newList = newObj.main.extra.filter((nonDeleted) => {
-      nonDeleted.deleted !== true;
-    });
-    newObj.main.extra = [...newList];
+    const filteredList = newObj.main.pracExp.filter((x) => x.deleted === false);
+    newObj.main.pracExp = [...filteredList];
     setMain(newObj);
     saving(newObj);
   };

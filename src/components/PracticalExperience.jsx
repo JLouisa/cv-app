@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 import Button from "./Button.jsx";
 import { FormEditPracExp } from "./FormEditPracExp.jsx";
 import { FormAddPracExp } from "./FormAddPracExp.jsx";
-import { EditBtn } from "./EditBtn.jsx";
+import EditBtn from "./EditBtn.jsx";
 
 class NewPracExp {
   constructor(yourFunction, yourEmployer, yourLocation, yourStartDate, yourEndDate, yourDescription) {
@@ -58,6 +58,9 @@ function PracticalExperience({ theMain, onMainPracExp, onEditMainPracExp, setIsA
     if (newItem.selected !== "") {
       newArr[foundIndex].selected = newItem.selected;
     }
+    if (newItem.deleted !== "") {
+      newArr[foundIndex].deleted = newItem.deleted;
+    }
     onEditMainPracExp(theMain.main.pracExp[foundIndex], newArr[foundIndex]);
   }
 
@@ -81,7 +84,8 @@ function PracticalExperience({ theMain, onMainPracExp, onEditMainPracExp, setIsA
                     onEditPracExp={onEditPracExp}
                     item={item}
                     setIsActive={setIsActive}
-                    onHandler={onHandler}
+                    // onHandler={onHandler}
+                    theMain={theMain}
                   />
                 )}
               </div>

@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 function EditBtn({ item, setIsActive }) {
   return (
     <button
+      type="button"
       className="EditBtn"
       onClick={() => {
         item.selected = !item.selected;
@@ -21,4 +22,4 @@ EditBtn.propTypes = {
   setIsActive: PropTypes.func,
 };
 
-export { EditBtn };
+export default EditBtn;

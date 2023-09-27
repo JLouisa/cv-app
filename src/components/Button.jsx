@@ -9,7 +9,7 @@ function Button({
   },
 }) {
   return (
-    <button className={classNameBtn} style={{ backgroundColor: color }} onClick={onClick}>
+    <button type="button" className={classNameBtn} style={{ backgroundColor: color }} onClick={onClick}>
       {text}
     </button>
   );
