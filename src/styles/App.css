@@ -60,8 +60,10 @@ main {
 main > section {
   padding: 1em;
   min-height: 100vh;
-  border: 2px solid black;
-  box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.153);
+  /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+  border-radius: 5px;
 }
 
 .downloadSection,
@@ -85,10 +87,11 @@ footer {
 
 .workTitle {
   display: block;
-  border: 1px solid black;
+  border: 1px solid var(--borderColor);
   font-weight: 700;
   padding: 1em;
-  background-color: #cfcfcf3a;
+  /* background-color: #cfcfcf3a; */
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   border-radius: 5px;
   margin: 1em 0;
 }

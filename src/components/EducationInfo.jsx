@@ -1,6 +1,7 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 import { v4 as uuidv4 } from "uuid";
+import { SubmitBtn } from "./SubmitBtn.jsx";
 import Button from "./Button.jsx";
 import { EducationList } from "./EducationList.jsx";
 
@@ -53,7 +54,7 @@ function EducationInfo({ theMain, onMainEducation, onEditMainEducation, setIsAct
     <>
       <div className="educationTitle">
         <h1>Education</h1>
-        <Button color={"green"} text={show ? "⌃" : "⌄"} onClick={onHandlerBtn} />
+        <Button text={show ? "⌃" : "⌄"} onClick={onHandlerBtn} />
       </div>
       {show && (
         <>
@@ -116,9 +117,7 @@ function EducationInfo({ theMain, onMainEducation, onEditMainEducation, setIsAct
                   />
                 </label>
               </div>
-              <div className="eduBtnDiv">
-                <input type="submit" value={"Add"} className="btn" />
-              </div>
+              <SubmitBtn typeBtn="submit" classNameBtn={"btn"} text={"Add"} />
             </form>
           )}
           <div className="eduBtnDiv">

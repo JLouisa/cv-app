@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Button from "./Button.jsx";
 import { SubmitBtn } from "./SubmitBtn.jsx";
 
-function Personalia({ /*theMain,*/ onMainPersonalia }) {
+function Personalia({ onMainPersonalia }) {
   const [show, setShow] = useState(false);
 
   class Personalia {
@@ -19,6 +19,16 @@ function Personalia({ /*theMain,*/ onMainPersonalia }) {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [phoneNum, setphoneNum] = useState("");
+
+  useEffect(() => {
+    const loadMainCv = JSON.parse(localStorage.getItem("mainCV"));
+    if (loadMainCv !== null) {
+      setFirstName(loadMainCv.main.personalia.firstName);
+      setLastName(loadMainCv.main.personalia.lastName);
+      setEmail(loadMainCv.main.personalia.email);
+      setphoneNum(loadMainCv.main.personalia.phoneNum);
+    }
+  }, []);
 
   function onHandlerBtn() {
     setShow(!show);
@@ -37,7 +47,7 @@ function Personalia({ /*theMain,*/ onMainPersonalia }) {
     <>
       <div className="personaliaTitle">
         <h1>Personalia</h1>
-        <Button color={"green"} text={show ? "⌃" : "⌄"} onClick={onHandlerBtn} />
+        <Button text={show ? "⌃" : "⌄"} onClick={onHandlerBtn} />
       </div>
       {show && (
         <form
@@ -114,8 +124,7 @@ function Personalia({ /*theMain,*/ onMainPersonalia }) {
 }
 
 Personalia.propTypes = {
-  theMain: PropTypes.object,
   onMainPersonalia: PropTypes.func,
 };
 
-export default Personalia;
+export { Personalia };

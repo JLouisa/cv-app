@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 function Button({
   typeBtn = "button",
   classNameBtn = "btn",
-  color = "green",
+  color = "#016DD6",
   text = "LeButton",
   onClick = () => {
     console.log("Click");

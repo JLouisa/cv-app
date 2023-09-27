@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
-import { useState } from "react";
-import Personalia from "./Personalia.jsx";
 import EducationInfo from "./EducationInfo.jsx";
+import { useState } from "react";
+import { Personalia } from "./Personalia.jsx";
 import { PracticalExperience } from "./PracticalExperience.jsx";
 
 function InfoSection({
@@ -24,7 +24,7 @@ function InfoSection({
 
   return (
     <section className="infoSection">
-      <Personalia theMain={theMain} onMainPersonalia={onMainPersonalia} />
+      <Personalia onMainPersonalia={onMainPersonalia} />
       <hr></hr>
       <EducationInfo
         theMain={theMain}

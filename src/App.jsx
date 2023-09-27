@@ -1,10 +1,10 @@
-import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import InfoSection from "./components/InfoSection.jsx";
-import { DisplaySection } from "./components/DisplaySection.jsx";
-import "./styles/App.css";
 import DownloadSection from "./components/DownloadSection.jsx";
 import FooterInfo from "./components/FooterInfo.jsx";
+import { useState, useEffect } from "react";
+import { DisplaySection } from "./components/DisplaySection.jsx";
+import "./styles/App.css";
 
 function App() {
   //! The Main Object

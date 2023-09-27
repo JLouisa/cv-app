@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
 
-function SubmitBtn({ text = "Add", classNameBtn = "btn" }) {
+function SubmitBtn({ text = "Add", classNameBtn = "btn", color = "darkgreen" }) {
   return (
     <div className="eduBtnDiv">
-      <button type="submit" className={classNameBtn}>
+      <button type="submit" className={classNameBtn} style={{ backgroundColor: color }}>
         {text}
       </button>
     </div>
@@ -13,6 +13,7 @@ function SubmitBtn({ text = "Add", classNameBtn = "btn" }) {
 SubmitBtn.propTypes = {
   classNameBtn: PropTypes.string,
   text: PropTypes.string,
+  color: PropTypes.string,
 };
 
 export { SubmitBtn };

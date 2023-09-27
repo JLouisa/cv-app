@@ -1,7 +1,7 @@
 import edit from "../images/edit.svg";
 import PropTypes from "prop-types";
 
-function EditBtn({ item, clickedFunc, branch }) {
+function EditBtn({ item, clickedFunc, branch, color = "white" }) {
   return (
     <button
       type="button"
@@ -9,6 +9,7 @@ function EditBtn({ item, clickedFunc, branch }) {
       onClick={() => {
         clickedFunc(item, branch);
       }}
+      style={{ backgroundColor: color }}
     >
       <img src={edit} alt="Edit button" />
     </button>
@@ -20,6 +21,7 @@ EditBtn.propTypes = {
   item: PropTypes.object,
   clickedFunc: PropTypes.func,
   branch: PropTypes.array,
+  color: PropTypes.string,
 };
 
 export default EditBtn;

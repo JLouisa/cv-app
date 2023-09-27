@@ -68,7 +68,7 @@ function PracticalExperience({ theMain, onMainPracExp, onEditMainPracExp, setIsA
     <>
       <div className="practicalExperience">
         <h1>Practical experience</h1>
-        <Button color={"green"} text={show ? "⌃" : "⌄"} onClick={onHandler} />
+        <Button text={show ? "⌃" : "⌄"} onClick={onHandler} />
       </div>
       {show && (
         <div>
@@ -103,7 +103,7 @@ function PracticalExperience({ theMain, onMainPracExp, onEditMainPracExp, setIsA
             )}
           </div>
           <div className="btnAddExp eduBtnDiv">
-            <Button color={"green"} text={showBtn ? "Cancel" : "Add Work Experience"} onClick={onHandlerBtn} />
+            <Button text={showBtn ? "Cancel" : "Add Work Experience"} onClick={onHandlerBtn} />
           </div>
         </div>
       )}
