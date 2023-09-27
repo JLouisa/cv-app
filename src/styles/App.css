@@ -94,3 +94,27 @@ main > section {
   display: flex;
   justify-content: space-between;
 }
+
+.EditBtn {
+  border: none;
+  outline: none;
+  transition: 0.2s;
+}
+
+.EditBtn:hover {
+  transform: scale(1.1);
+}
+
+.EditBtn:active {
+  transform: scale(0.9);
+}
+
+.deleteDiv {
+  display: flex;
+  justify-content: space-between;
+}
+
+.deleteImg {
+  width: 20px;
+  height: auto;
+}

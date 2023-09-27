@@ -4,12 +4,13 @@ import PropTypes from "prop-types";
 function EditBtn({ item, setIsActive }) {
   return (
     <button
+      className="EditBtn"
       onClick={() => {
         item.selected = !item.selected;
         setIsActive(item.selected);
       }}
     >
-      <img src={edit} alt="Edit button" className="EditBtn" />
+      <img src={edit} alt="Edit button" />
     </button>
   );
 }

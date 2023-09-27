@@ -1,7 +1,5 @@
-// import { useState } from "react";
 import PropTypes from "prop-types";
-// import { v4 as uuidv4 } from "uuid";
-// import Button from "./Button.jsx";
+import { DeleteBtn } from "./DeleteBtn.jsx";
 
 function FormEditEducation({ item, editEduList, changeSelected, setIsActive }) {
   let schoolValue = "";
@@ -60,8 +58,9 @@ function FormEditEducation({ item, editEduList, changeSelected, setIsActive }) {
             />
           </label>
         </div>
-        <div>
+        <div className="deleteDiv">
           <input type="submit" value={"Edit"} />
+          <DeleteBtn />
         </div>
       </form>
     </>

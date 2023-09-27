@@ -17,9 +17,9 @@ function EducationList({ theMain, onEditMainEducation, editEduList, setIsActive 
           <div
             className="workTitle"
             key={item.id}
-            onDoubleClick={() => {
-              changeSelected(item);
-            }}
+            // onDoubleClick={() => {
+            //   changeSelected(item);
+            // }}
           >
             <div className="educationTitle">
               {item.title}
