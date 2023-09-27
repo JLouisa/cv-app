@@ -33,10 +33,6 @@ function Personalia({ /*theMain,*/ onMainPersonalia }) {
     onMainPersonalia(newPersonInfo);
   }
 
-  // const checkPersonalia = () => {
-  //   if(theMain.main.personalia.firstName) {return true}
-  // }
-
   return (
     <>
       <div className="personaliaTitle">

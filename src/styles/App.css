@@ -63,6 +63,11 @@ main > section {
   box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.153);
 }
 
+.downloadSection {
+  text-align: center;
+  padding: 1em;
+}
+
 footer {
   text-align: center;
   border-top: 2px solid var(--borderColor);
@@ -126,5 +131,19 @@ footer {
 
 .deleteImg {
   width: 20px;
+  height: auto;
+}
+
+.links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.links img {
+  width: 3rem;
   height: auto;
 }

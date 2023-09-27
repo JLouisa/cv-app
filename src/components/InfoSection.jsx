@@ -11,8 +11,19 @@ function InfoSection({
   onEditMainEducation,
   onMainPracExp,
   onEditMainPracExp,
+  editMain,
 }) {
   const [isActive, setIsActive] = useState(false);
+
+  const clickedFunc = (item, branch) => {
+    console.log(item.id);
+    console.log(item);
+    console.log(branch);
+    const newItem = { ...item };
+    newItem.selected = !newItem.selected;
+
+    editMain(newItem, branch);
+  };
 
   return (
     <section className="infoSection">
@@ -24,6 +35,7 @@ function InfoSection({
         onEditMainEducation={onEditMainEducation}
         setIsActive={setIsActive}
         isActive={isActive}
+        clickedFunc={clickedFunc}
       />
       <hr></hr>
       <PracticalExperience
@@ -32,6 +44,7 @@ function InfoSection({
         onEditMainPracExp={onEditMainPracExp}
         setIsActive={setIsActive}
         isActive={isActive}
+        clickedFunc={clickedFunc}
       />
       <hr></hr>
     </section>
@@ -45,6 +58,7 @@ InfoSection.propTypes = {
   onEditMainEducation: PropTypes.func,
   onMainPracExp: PropTypes.func,
   onEditMainPracExp: PropTypes.func,
+  editMain: PropTypes.func,
 };
 
 export default InfoSection;

@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 import Button from "./Button.jsx";
 import { EducationList } from "./EducationList.jsx";
 
-function EducationInfo({ theMain, onMainEducation, onEditMainEducation, setIsActive, isActive }) {
+function EducationInfo({ theMain, onMainEducation, onEditMainEducation, setIsActive, isActive, clickedFunc }) {
   const [show, setShow] = useState(false);
 
   const [schoolName, setSchoolName] = useState("");
@@ -63,6 +63,7 @@ function EducationInfo({ theMain, onMainEducation, onEditMainEducation, setIsAct
               onEditMainEducation={onEditMainEducation}
               editEduList={editEduList}
               setIsActive={setIsActive}
+              clickedFunc={clickedFunc}
             />
           </div>
           {isActive && (
@@ -138,6 +139,7 @@ EducationInfo.propTypes = {
   onEditMainEducation: PropTypes.func,
   setIsActive: PropTypes.func,
   isActive: PropTypes.bool,
+  clickedFunc: PropTypes.func,
 };
 
 export default EducationInfo;

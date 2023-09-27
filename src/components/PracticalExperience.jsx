@@ -20,10 +20,10 @@ class NewPracExp {
   }
 }
 
-function PracticalExperience({ theMain, onMainPracExp, onEditMainPracExp, setIsActive }) {
-  const [work, setWork] = useState([]);
-
+function PracticalExperience({ theMain, onMainPracExp, onEditMainPracExp, setIsActive, clickedFunc }) {
   const [show, setShow] = useState(false);
+
+  const [work, setWork] = useState([]);
   const onHandler = () => {
     setShow(!show);
   };
@@ -77,14 +77,13 @@ function PracticalExperience({ theMain, onMainPracExp, onEditMainPracExp, setIsA
               <div key={item.id} className="workTitle">
                 <div className="practExpTitle">
                   {item.yourFunction}
-                  <EditBtn item={item} setIsActive={setIsActive} />
+                  <EditBtn item={item} clickedFunc={clickedFunc} branch={theMain.main.pracExp} />
                 </div>
                 {item.selected && (
                   <FormEditPracExp
                     onEditPracExp={onEditPracExp}
                     item={item}
                     setIsActive={setIsActive}
-                    // onHandler={onHandler}
                     theMain={theMain}
                   />
                 )}
@@ -117,6 +116,7 @@ PracticalExperience.propTypes = {
   onMainPracExp: PropTypes.func,
   onEditMainPracExp: PropTypes.func,
   setIsActive: PropTypes.func,
+  clickedFunc: PropTypes.func,
 };
 
 export { PracticalExperience, NewPracExp };
