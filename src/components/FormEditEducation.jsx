@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import DeleteBtn from "./DeleteBtn.jsx";
 
-function FormEditEducation({ item, editEduList, changeSelected, setIsActive }) {
+function FormEditEducation({ item, editEduList, changeSelected, setIsActive, onEditMainEducation }) {
   let schoolValue = "";
   let titleValue = "";
   let dateValue = "";
@@ -60,7 +60,7 @@ function FormEditEducation({ item, editEduList, changeSelected, setIsActive }) {
         </div>
         <div className="deleteDiv">
           <input type="submit" value={"Edit"} />
-          <DeleteBtn />
+          <DeleteBtn item={item} onEditPracExp={onEditMainEducation} />
         </div>
       </form>
     </>
@@ -73,6 +73,7 @@ FormEditEducation.propTypes = {
   editEduList: PropTypes.func,
   changeSelected: PropTypes.func,
   setIsActive: PropTypes.func,
+  onEditMainEducation: PropTypes.func,
 };
 
 export { FormEditEducation };

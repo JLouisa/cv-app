@@ -25,6 +25,7 @@ function EducationList({ theMain, onEditMainEducation, editEduList, setIsActive 
                 editEduList={editEduList}
                 changeSelected={changeSelected}
                 setIsActive={setIsActive}
+                onEditMainEducation={onEditMainEducation}
               />
             )}
           </div>
