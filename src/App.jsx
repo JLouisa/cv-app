@@ -69,6 +69,38 @@ function App() {
     saving(newObj);
   };
 
+  //! Delete module
+  const deletePersonalia = () => {
+    const newObj = Object.assign({}, mainInfo);
+    const list = [...newObj.main.education];
+    const newList = list.filter((nonDeleted) => {
+      nonDeleted.deleted !== true;
+    });
+    newObj.main.education = [...newList];
+    setMain(newObj);
+    saving(newObj);
+  };
+  const deleteEducation = () => {
+    const newObj = Object.assign({}, mainInfo);
+    const list = [...mainInfo.main.pracExp];
+    const newList = list.filter((nonDeleted) => {
+      nonDeleted.deleted !== true;
+    });
+    newObj.main.pracExp = [...newList];
+    setMain(newObj);
+    saving(newObj);
+  };
+  const deleteExtra = () => {
+    const newObj = Object.assign({}, mainInfo);
+    const list = [...mainInfo.main.extra];
+    const newList = list.filter((nonDeleted) => {
+      nonDeleted.deleted !== true;
+    });
+    newObj.main.extra = [...newList];
+    setMain(newObj);
+    saving(newObj);
+  };
+
   return (
     <>
       <header>

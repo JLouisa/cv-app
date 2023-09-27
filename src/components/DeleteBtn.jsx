@@ -4,11 +4,11 @@ import PropTypes from "prop-types";
 function DeleteBtn({ item, setIsActive }) {
   return (
     <button
-    // className="EditBtn"
-    // onClick={() => {
-    //   item.selected = !item.selected;
-    //   setIsActive(item.selected);
-    // }}
+      className="deleteBtn"
+      onClick={() => {
+        item.deleted = !item.deleted;
+        setIsActive(item.selected);
+      }}
     >
       <img src={deleteBtn} alt="Delete button" className="deleteImg" />
     </button>

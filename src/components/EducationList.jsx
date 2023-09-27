@@ -14,13 +14,7 @@ function EducationList({ theMain, onEditMainEducation, editEduList, setIsActive 
     <>
       {theMain.main.education.map((item) => {
         return (
-          <div
-            className="workTitle"
-            key={item.id}
-            // onDoubleClick={() => {
-            //   changeSelected(item);
-            // }}
-          >
+          <div className="workTitle" key={item.id}>
             <div className="educationTitle">
               {item.title}
               <EditBtn item={item} setIsActive={setIsActive} />

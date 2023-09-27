@@ -15,6 +15,7 @@ class NewPracExp {
       (this.yourEndDate = yourEndDate),
       (this.yourDescription = yourDescription),
       (this.selected = false),
+      (this.deleted = false),
       (this.id = uuidv4());
   }
 }

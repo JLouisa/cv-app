@@ -17,7 +17,12 @@ function EducationInfo({ theMain, onMainEducation, onEditMainEducation, setIsAct
 
   class NewEdu {
     constructor(title, school, date) {
-      (this.title = title), (this.school = school), (this.date = date), (this.selected = false), (this.id = uuidv4());
+      (this.title = title),
+        (this.school = school),
+        (this.date = date),
+        (this.selected = false),
+        (this.deleted = false),
+        (this.id = uuidv4());
     }
   }
 
