@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import InfoSection from "./components/InfoSection.jsx";
 import { DisplaySection } from "./components/DisplaySection.jsx";
 import "./styles/App.css";
+import FooterSection from "./components/FooterSection.jsx";
 
 function App() {
   //! The Main Object
@@ -90,6 +91,9 @@ function App() {
         />
         <DisplaySection theMain={mainInfo} thePracExpInfo={displayPracExpInfo} />
       </main>
+      <footer>
+        <FooterSection />
+      </footer>
     </>
   );
 }

@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 
 function DisplaySection({ theMain }) {
   return (
-    <section>
+    <section id="DisplayPage">
       {theMain.main.personalia.firstName !== undefined && (
         <>
           <div className="displayPersonalia">
