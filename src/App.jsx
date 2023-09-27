@@ -16,8 +16,6 @@ function App() {
   // //! Load JSON
   useEffect(() => {
     const loadMainCv = localStorage.getItem("mainCV");
-    console.log("loadMainCv");
-    console.log(loadMainCv);
     if (loadMainCv !== null) setMain(JSON.parse(loadMainCv));
   }, []);
 
@@ -26,10 +24,6 @@ function App() {
     const mainCV = JSON.stringify(obj);
     localStorage.setItem("mainCV", mainCV);
   };
-
-  // useEffect(() => {
-  //   localStorage.setItem("mainCV", JSON.stringify(mainInfo));
-  // }, [mainInfo]);
 
   //! Display Work Experience
   const [displayPracExpInfo, setdisplayPracExpInfo] = useState([]);

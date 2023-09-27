@@ -4,9 +4,8 @@ import { v4 as uuidv4 } from "uuid";
 import Button from "./Button.jsx";
 import { EducationList } from "./EducationList.jsx";
 
-function EducationInfo({ theMain, onMainEducation, onEditMainEducation }) {
+function EducationInfo({ theMain, onMainEducation, onEditMainEducation, setIsActive, isActive }) {
   const [show, setShow] = useState(false);
-  const [isActive, setIsActive] = useState(false);
 
   const [schoolName, setSchoolName] = useState("");
   const [titleStudy, setTitleStudy] = useState("");
@@ -132,6 +131,8 @@ EducationInfo.propTypes = {
   theMain: PropTypes.object,
   onMainEducation: PropTypes.func,
   onEditMainEducation: PropTypes.func,
+  setIsActive: PropTypes.func,
+  isActive: PropTypes.bool,
 };
 
 export default EducationInfo;

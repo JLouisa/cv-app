@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { useState } from "react";
 import Button from "./Button.jsx";
 
-function Personalia({ onMainPersonalia }) {
+function Personalia({ /*theMain,*/ onMainPersonalia }) {
   const [show, setShow] = useState(false);
 
   class Personalia {
@@ -32,6 +32,10 @@ function Personalia({ onMainPersonalia }) {
     const newPersonInfo = new Personalia(firstName, lastName, email, phoneNum);
     onMainPersonalia(newPersonInfo);
   }
+
+  // const checkPersonalia = () => {
+  //   if(theMain.main.personalia.firstName) {return true}
+  // }
 
   return (
     <>
@@ -110,6 +114,7 @@ function Personalia({ onMainPersonalia }) {
 }
 
 Personalia.propTypes = {
+  theMain: PropTypes.object,
   onMainPersonalia: PropTypes.func,
 };
 

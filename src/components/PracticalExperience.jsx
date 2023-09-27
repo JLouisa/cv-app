@@ -4,6 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 import Button from "./Button.jsx";
 import { FormEditPracExp } from "./FormEditPracExp.jsx";
 import { FormAddPracExp } from "./FormAddPracExp.jsx";
+import { EditBtn } from "./EditBtn.jsx";
 
 class NewPracExp {
   constructor(yourFunction, yourEmployer, yourLocation, yourStartDate, yourEndDate, yourDescription) {
@@ -69,15 +70,11 @@ function PracticalExperience({ theMain, onMainPracExp, onEditMainPracExp, setIsA
         <div>
           <div>
             {theMain.main.pracExp.map((item) => (
-              <div
-                key={item.id}
-                className="workTitle"
-                onDoubleClick={() => {
-                  item.selected = !item.selected;
-                  setIsActive(item.selected);
-                }}
-              >
-                {item.yourFunction}
+              <div key={item.id} className="workTitle">
+                <div className="practExpTitle">
+                  {item.yourFunction}
+                  <EditBtn item={item} setIsActive={setIsActive} />
+                </div>
                 {item.selected && (
                   <FormEditPracExp
                     onEditPracExp={onEditPracExp}

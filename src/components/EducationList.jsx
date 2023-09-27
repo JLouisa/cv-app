@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { EditBtn } from "./EditBtn.jsx";
 import { FormEditEducation } from "./FormEditEducation.jsx";
 
 function EducationList({ theMain, onEditMainEducation, editEduList, setIsActive }) {
@@ -20,7 +21,10 @@ function EducationList({ theMain, onEditMainEducation, editEduList, setIsActive 
               changeSelected(item);
             }}
           >
-            {item.title}
+            <div className="educationTitle">
+              {item.title}
+              <EditBtn item={item} setIsActive={setIsActive} />
+            </div>
             {item.selected && (
               <FormEditEducation
                 item={item}

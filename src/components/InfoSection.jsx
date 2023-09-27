@@ -16,9 +16,15 @@ function InfoSection({
 
   return (
     <section className="infoSection">
-      <Personalia onMainPersonalia={onMainPersonalia} />
+      <Personalia theMain={theMain} onMainPersonalia={onMainPersonalia} />
       <hr></hr>
-      <EducationInfo theMain={theMain} onMainEducation={onMainEducation} onEditMainEducation={onEditMainEducation} />
+      <EducationInfo
+        theMain={theMain}
+        onMainEducation={onMainEducation}
+        onEditMainEducation={onEditMainEducation}
+        setIsActive={setIsActive}
+        isActive={isActive}
+      />
       <hr></hr>
       <PracticalExperience
         theMain={theMain}
