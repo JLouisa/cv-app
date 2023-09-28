@@ -12,62 +12,6 @@ function App() {
     side: { extra: [] },
     main: { personalia: {}, education: [], pracExp: [], extra: [] },
   };
-  // const exampleObj = {
-  //   side: {
-  //     extra: [],
-  //   },
-  //   main: {
-  //     personalia: {
-  //       firstName: "John",
-  //       lastName: "Doe",
-  //       email: "john.doe@gmail.com",
-  //       phoneNum: "0645678901",
-  //     },
-  //     education: [
-  //       {
-  //         title: "Fiscal Law",
-  //         school: "Erasmus University",
-  //         date: "2023-01",
-  //         selected: false,
-  //         deleted: false,
-  //         id: "998898a6-b1fe-4e72-b858-2b129ed229ca",
-  //       },
-  //       {
-  //         title: "Web Developer",
-  //         school: "The Odin Project",
-  //         date: "2023-05",
-  //         selected: false,
-  //         deleted: false,
-  //         id: "b035a984-7836-48af-9d6c-825d8b7f5ba2",
-  //       },
-  //     ],
-  //     pracExp: [
-  //       {
-  //         yourFunction: "Police Officer",
-  //         yourEmployer: "Police Department",
-  //         yourLocation: "Amsterdam",
-  //         yourStartDate: "2023-01",
-  //         yourEndDate: "2023-02",
-  //         yourDescription: "Beating Criminals",
-  //         selected: false,
-  //         deleted: false,
-  //         id: "26cdd90c-6240-4934-ac47-0818ea67afa6",
-  //       },
-  //       {
-  //         yourFunction: "Lawyer",
-  //         yourEmployer: "Law Center",
-  //         yourLocation: "Rotterdam",
-  //         yourStartDate: "2023-02",
-  //         yourEndDate: "2023-03",
-  //         yourDescription: "Protecting Criminals",
-  //         selected: false,
-  //         deleted: false,
-  //         id: "2d91020c-bbd3-4cbf-9f32-37d946715d33",
-  //       },
-  //     ],
-  //     extra: [],
-  //   },
-  // };
 
   const [mainInfo, setMain] = useState(mainObj);
 
