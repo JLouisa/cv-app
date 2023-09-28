@@ -32,74 +32,86 @@ function FormEditPracExp({ onEditPracExp, item, setIsActive }) {
         onEdit(item);
       }}
     >
-      <label htmlFor="editFunction">
-        {"Function"}
-        <input
-          type="text"
-          id="editFunction"
-          defaultValue={item.yourFunction}
-          onChange={(e) => {
-            setYourFunction(e.target.value);
-          }}
-        />
-      </label>
-      <label htmlFor="editEmployer">
-        {"Employer"}
-        <input
-          type="text"
-          id="editEmployer"
-          defaultValue={item.yourEmployer}
-          onChange={(e) => {
-            setYourEmployer(e.target.value);
-          }}
-        />
-      </label>
-      <label htmlFor="editLocation">
-        {"Location"}
-        <input
-          type="text"
-          id="editLocation"
-          defaultValue={item.yourLocation}
-          onChange={(e) => {
-            setYourLocation(e.target.value);
-          }}
-        />
-      </label>
-      <label htmlFor="editStartDate">
-        {"Start Date"}
-        <input
-          type="month"
-          id="editStartDate"
-          defaultValue={item.yourStartDate}
-          onChange={(e) => {
-            setYourStartDate(e.target.value);
-          }}
-        />
-      </label>
-      <label htmlFor="editEndDate">
-        {"End Date"}
-        <input
-          type="month"
-          id="editEndDate"
-          defaultValue={item.yourEndDate}
-          onChange={(e) => {
-            setYourEndDate(e.target.value);
-          }}
-        />
-      </label>
-      <label htmlFor="editDescription">
-        {"Description"}
-        <textarea
-          type="text"
-          id="editDescription"
-          rows="5"
-          cols="33"
-          defaultValue={item.yourDescription}
-          onChange={(e) => {
-            setYourDescription(e.target.value);
-          }}
-        />
-      </label>
+      <div>
+        <label htmlFor="editFunction">
+          {"Function"}
+          <input
+            type="text"
+            id="editFunction"
+            defaultValue={item.yourFunction}
+            onChange={(e) => {
+              setYourFunction(e.target.value);
+            }}
+          />
+        </label>
+      </div>
+      <div>
+        <label htmlFor="editEmployer">
+          {"Employer"}
+          <input
+            type="text"
+            id="editEmployer"
+            defaultValue={item.yourEmployer}
+            onChange={(e) => {
+              setYourEmployer(e.target.value);
+            }}
+          />
+        </label>
+      </div>
+      <div>
+        <label htmlFor="editLocation">
+          {"Location"}
+          <input
+            type="text"
+            id="editLocation"
+            defaultValue={item.yourLocation}
+            onChange={(e) => {
+              setYourLocation(e.target.value);
+            }}
+          />
+        </label>
+      </div>
+      <div>
+        <label htmlFor="editStartDate">
+          {"Start Date"}
+          <input
+            type="month"
+            id="editStartDate"
+            defaultValue={item.yourStartDate}
+            onChange={(e) => {
+              setYourStartDate(e.target.value);
+            }}
+          />
+        </label>
+      </div>
+      <div>
+        <label htmlFor="editEndDate">
+          {"End Date"}
+          <input
+            type="month"
+            id="editEndDate"
+            defaultValue={item.yourEndDate}
+            onChange={(e) => {
+              setYourEndDate(e.target.value);
+            }}
+          />
+        </label>
+      </div>
+      <div>
+        <label htmlFor="editDescription">
+          {"Description"}
+          <textarea
+            type="text"
+            id="editDescription"
+            rows="33"
+            cols="33"
+            defaultValue={item.yourDescription}
+            onChange={(e) => {
+              setYourDescription(e.target.value);
+            }}
+          />
+        </label>
+      </div>
       <div className="deleteDiv">
         <div className="">
           <SubmitBtn typeBtn="submit" classNameBtn={"btn"} text={"Edit"} />

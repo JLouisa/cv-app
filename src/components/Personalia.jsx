@@ -49,30 +49,30 @@ function Personalia({ onMainPersonalia }) {
         <h1>Personalia</h1>
         <Button text={show ? "⌃" : "⌄"} onClick={onHandlerBtn} />
       </div>
-      {show && (
-        <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            onHandlerBtn();
-            onSubmit();
-          }}
-        >
-          <label htmlFor="fName">
-            {"First Name "}
-            <input
-              type="text"
-              placeholder="First Name"
-              id="fName"
-              autoComplete="given-name"
-              value={firstName}
-              onChange={(e) => {
-                setFirstName(e.target.value);
-              }}
-            />
-          </label>
-          <div>
-            <label htmlFor="lName">
-              {"Last Name "}
+      <div className="personaliaForm">
+        {show && (
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              onHandlerBtn();
+              onSubmit();
+            }}
+          >
+            <div>
+              <label htmlFor="fName">{"First Name "}</label>
+              <input
+                type="text"
+                placeholder="First Name"
+                id="fName"
+                autoComplete="given-name"
+                value={firstName}
+                onChange={(e) => {
+                  setFirstName(e.target.value);
+                }}
+              />
+            </div>
+            <div>
+              <label htmlFor="lName">{"Last Name "}</label>
               <input
                 type="text"
                 placeholder="Last Name"
@@ -83,11 +83,9 @@ function Personalia({ onMainPersonalia }) {
                   setLastName(e.target.value);
                 }}
               />
-            </label>
-          </div>
-          <div>
-            <label htmlFor="eMail">
-              {"E-mail address "}
+            </div>
+            <div>
+              <label htmlFor="eMail">{"E-mail address "}</label>
               <input
                 type="email"
                 placeholder="john@doe.nl"
@@ -98,11 +96,9 @@ function Personalia({ onMainPersonalia }) {
                   setEmail(e.target.value);
                 }}
               />
-            </label>
-          </div>
-          <div>
-            <label htmlFor="phone">
-              {"Phone Number "}
+            </div>
+            <div>
+              <label htmlFor="phone">{"Phone Number "}</label>
               <input
                 type="number"
                 placeholder="+316 555 5555"
@@ -114,11 +110,11 @@ function Personalia({ onMainPersonalia }) {
                   setphoneNum(e.target.value);
                 }}
               />
-            </label>
-          </div>
-          <SubmitBtn typeBtn="submit" classNameBtn={"btn"} text={"Add"} />
-        </form>
-      )}
+            </div>
+            <SubmitBtn typeBtn="submit" classNameBtn={"btn"} text={"Add"} />
+          </form>
+        )}
+      </div>
     </>
   );
 }

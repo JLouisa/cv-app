@@ -75,19 +75,21 @@ function EducationInfo({ theMain, onMainEducation, onEditMainEducation, setIsAct
                 setIsActive(false);
               }}
             >
-              <label htmlFor="schoolName">
-                {"What is your school Name?"}
-                <input
-                  type="text"
-                  placeholder="School Name"
-                  id="schoolName"
-                  autoComplete="off"
-                  value={schoolName}
-                  onChange={(e) => {
-                    setSchoolName(e.target.value);
-                  }}
-                />
-              </label>
+              <div>
+                <label htmlFor="schoolName">
+                  {"What is your school Name?"}
+                  <input
+                    type="text"
+                    placeholder="School Name"
+                    id="schoolName"
+                    autoComplete="off"
+                    value={schoolName}
+                    onChange={(e) => {
+                      setSchoolName(e.target.value);
+                    }}
+                  />
+                </label>
+              </div>
               <div>
                 <label htmlFor="titleStudy">
                   {"What is your Study Title?"}

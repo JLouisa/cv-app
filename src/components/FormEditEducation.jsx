@@ -17,19 +17,21 @@ function FormEditEducation({ item, editEduList, changeSelected, setIsActive, onE
           setIsActive(false);
         }}
       >
-        <label htmlFor="schoolName">
-          {"What is your school Name?"}
-          <input
-            type="text"
-            placeholder="School Name"
-            id="schoolName"
-            autoComplete="off"
-            defaultValue={item.school}
-            onChange={(e) => {
-              schoolValue = e.target.value;
-            }}
-          />
-        </label>
+        <div>
+          <label htmlFor="schoolName">
+            {"What is your school Name?"}
+            <input
+              type="text"
+              placeholder="School Name"
+              id="schoolName"
+              autoComplete="off"
+              defaultValue={item.school}
+              onChange={(e) => {
+                schoolValue = e.target.value;
+              }}
+            />
+          </label>
+        </div>
         <div>
           <label htmlFor="titleStudy">
             {"What is your Study Title?"}

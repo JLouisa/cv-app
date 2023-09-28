@@ -113,7 +113,7 @@ function FormAddPracExp({ onMainPracExp, work, setWork, onHandlerBtn }) {
         <textarea
           id="description"
           name="description"
-          rows="5"
+          rows="33"
           cols="33"
           value={yourDescription}
           onChange={(e) => {
