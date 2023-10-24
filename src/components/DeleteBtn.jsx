@@ -1,6 +1,7 @@
 import deleteBtn from "../images/delete.svg";
 import PropTypes from "prop-types";
 
+//!Button with the delete function
 function DeleteBtn({ item, onEditPracExp }) {
   const deletedFunc = () => {
     let newItem = { ...item };
